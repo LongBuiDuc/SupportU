@@ -25,7 +25,7 @@ We must catch common errors in all API to ensure our application works properly.
 |---------------------------|-------------------------|------------------------------|
 |           401             |     unauthorized        |    Authen fail               |
 
-## Group QuestionsCollection
+## Group User
 Polls is a simple API allowing consumers to view polls and vote in them.
 ### GetUserInfo [GET /user/{id}]
 Get user infomation.
@@ -51,7 +51,7 @@ User login
             "password": "123456"
         }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
         {
             "id": 1,
