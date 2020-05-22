@@ -1,151 +1,60 @@
 FORMAT: 1A
 HOST: https://polls.apiblueprint.org/
 
-# SupportU
+# SuportU
+This is document for SuportU 's REST API. All responses from and to the API will be in JSON format.
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+#General Request Response
+Almost APIs requires a request with application/json content type (except API for upload file, image).
+
+#Authentication
+API use JWT to authenticate user. Exactly we used JWT Bearer Authentication.
+Almost APIs requires authentication on header with Authorization tag and value formatted:
+
+Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRw319.sSaOosOuPWvTYVL
+
+#Error
+We must catch common errors in all API to ensure our application works properly.
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot create new user!"
+        }
+
+|         HTTP CODE         |       Error code        |  Error message               |
+|---------------------------|-------------------------|------------------------------|
+|           401             |     unauthorized        |    Authen fail               |
 
 ## Group QuestionsCollection
 Polls is a simple API allowing consumers to view polls and vote in them.
-### ListAllQuestions [GET /questions]
-It takes a JSON object containing a question and a collection of answers in the form of choices.
+### GetUserInfo [GET /user/{id}]
+Get user infomation.
+
++ Parameters
+    + id - variable that is required
+    
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### CreateaNewQuestion [POST /test]
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "published_at": "2015-08-05T08:40:51.620Z",
-            "choices": [
-                {
-                    "choice": "Swift",
-                    "votes": 0
-                }, {
-                    "choice": "Python",
-                    "votes": 0
-                }, {
-                    "choice": "Objective-C",
-                    "votes": 0
-                }, {
-                    "choice": "Ruby",
-                    "votes": 0
-                }
-            ]
+            "id": 1,
+            "name": "Bui Duc Long",
+            "email":"duclongbuivn@gmail.com"
         }
         
-### Test1 [POST /test1]
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+### Login [POST /login]
+User login
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "email": "duclongbuivn@gmail.com",
+            "password": "123456"
         }
 
 + Response 201 (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "published_at": "2015-08-05T08:40:51.620Z",
-            "choices": [
-                {
-                    "choice": "Swift",
-                    "votes": 0
-                }, {
-                    "choice": "Python",
-                    "votes": 0
-                }, {
-                    "choice": "Objective-C",
-                    "votes": 0
-                }, {
-                    "choice": "Ruby",
-                    "votes": 0
-                }
-            ]
-        }
-        
-### Test2 [POST /test2]
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "published_at": "2015-08-05T08:40:51.620Z",
-            "choices": [
-                {
-                    "choice": "Swift",
-                    "votes": 0
-                }, {
-                    "choice": "Python",
-                    "votes": 0
-                }, {
-                    "choice": "Objective-C",
-                    "votes": 0
-                }, {
-                    "choice": "Ruby",
-                    "votes": 0
-                }
-            ]
+            "id": 1,
+            "name": "Bui Duc Long",
+            "email":"duclongbuivn@gmail.com"
         }
