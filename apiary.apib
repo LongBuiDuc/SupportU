@@ -27,7 +27,7 @@ We must catch common errors in all API to ensure our application works properly.
 
 ## Group User
 Polls is a simple API allowing consumers to view polls and vote in them.
-### GetUserInfo [GET /api/users/{id}]
+### Get User Info [GET /api/users/{id}]
 Get user infomation.
 
 + Parameters
@@ -174,7 +174,7 @@ User signup
             "message":"Cannot execute query!",
         }
         
-### ForgotPassword [POST /api/authorization/forgotpassword/]
+### Forgot Password [POST /api/authorization/forgotpassword/]
 Forgot password.
 
 + Request (application/json)
@@ -210,7 +210,7 @@ Forgot password.
           "message": "error message"
         }
         
-### UpdateUserInfomation [PUT /api/users/]
+### Update User Infomation [PUT /api/users/]
 Update Users infomation.
 
 + Request (application/json)
@@ -251,7 +251,7 @@ Update Users infomation.
           "message": "Invalid access token! Authentication is required!"
         }
         
-### ChangePassword [GET /api/users/changepassword]
+### Change Password [GET /api/users/changepassword]
 Change password of Users.
 
 + Request (application/json)
