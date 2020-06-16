@@ -27,7 +27,7 @@ We must catch common errors in all API to ensure our application works properly.
 
 ## Group User
 Polls is a simple API allowing consumers to view polls and vote in them.
-### GetUserInfo [GET /user/{id}]
+### GetUserInfo [GET /api/users/{id}]
 Get user infomation.
 
 + Parameters
@@ -37,11 +37,31 @@ Get user infomation.
 
         {
             "id": 1,
-            "name": "Bui Duc Long",
-            "email":"duclongbuivn@gmail.com"
+            "email": "duclongbuivn@gmail.com",
+            "password": "123456",
+            "name": "logn",
+            "phone": "56465465",
+            "gender": "male",
+            "hobbies": "Run",
+            "create_date": "2020-06-10 09:57:38",
+            "update_date": "2020-06-10 09:57:38"
         }
         
-### Login [POST /login]
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### SignIn [POST /api/authorization/signin]
 User login
 
 + Request (application/json)
@@ -54,7 +74,222 @@ User login
 + Response 200 (application/json)
 
         {
+            "user":
+            {
+                "id": 1,
+                "name": "Bui Duc Long",
+                "email":"duclongbuivn@gmail.com",
+                "password": "123456",
+                "phone": "56465465",
+                "gender": "male",
+                "hobbies": "Run",
+                "createdDate": "2020-06-12T04:45:29.1393671Z",
+                "updateDate": "null"
+            },
+            "token": "iofgnojsmopdd[spifjdwfgl;ew;d,sa,;cjkposawekdfj"
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code":"EMAIL_EXISTED",
+            "message":"The email already exist!"
+        }
+
+        {  
+            "code":"EMAIL_NOT_FOUND_ERROR",
+            "message":"Email Not Found!"
+        }
+        
+        {  
+            "code":"PASSWORD_WRONG",
+            "message":"Password is wrong!"
+        }
+        
+        {  
+            "code":"USER_STATUS_INVALID",
+            "message":"User Status is invalid!"
+        }
+        
+        {  
+            "code":"USER_STATUS_NOT_ACTIVE",
+            "message":"User Status is not active!"
+        }
+        
+        {  
+            "code":"USER_STATUS_BLOCK",
+            "message":"User Status is blocked or terminated!!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Database Error or some exceptions on Server!",
+        }
+        
+### SignUp [POST /api/authorization/signup]
+User signup
+
++ Request (application/json)
+
+        {
+            "email": "duclongbuivn@gmail.com",
+            "password": "123456",
+            "name": "logn",
+            "phone": "56465465",
+            "gender": "male",
+            "hobbies": "Run",
+        }
+
++ Response 200 (application/json)
+
+        {
+            "user":
+            {
+                "id": 1,
+                "name": "Bui Duc Long",
+                "email":"duclongbuivn@gmail.com",
+                "password": "123456",
+                "phone": "56465465",
+                "gender": "male",
+                "hobbies": "Run",
+                "createdDate": "2020-06-12T04:45:29.1393671Z",
+                "updateDate": "null"
+            },
+            "token": "iofgnojsmopdd[spifjdwfgl;ew;d,sa,;cjkposawekdfj"
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code":"EMAIL_EXISTED",
+            "message":"The email already exist!",
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### ForgotPassword [POST /api/authorization/forgotpassword/]
+Forgot password.
+
++ Request (application/json)
+
+        {
+            "email": "duclongbuivn@gmail.com",
+            "phone": "083243315",
+        }
+    
++ Response 200 (application/json)
+
+        {
+            "code":"PASSWORD_WILL_SENT",
+            "message":"Password will be sent to the email registration!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "EMAIL_NOT_FOUND_ERROR",
+          "message": "Email Not Found!"
+        }
+        
+        {
+          "code": "PHONENUMBER_NOT_FOUND_ERROR",
+          "message": "Phone numeber Not Found!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+          "code": "INTERNAL_SERVER_ERROR",
+          "message": "error message"
+        }
+        
+### UpdateUserInfomation [PUT /api/users/]
+Update Users infomation.
+
++ Request (application/json)
+
+        {
             "id": 1,
-            "name": "Bui Duc Long",
-            "email":"duclongbuivn@gmail.com"
+            "email": "duclongbuivn@gmail.com",
+            "password": "123456",
+            "name": "logn",
+            "phone": "56465465",
+            "gender": "male",
+            "hobbies": "Run"
+        }
+    
++ Response 200 (application/json)
+
+        {
+          "code": "UPDATE_SUCCESS",
+          "message": "request confirmed!"
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
+        {
+          "code": "ID_REQUIRED",
+          "message": "Invalid access ID! ID is required!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
+### ChangePassword [GET /api/users/changepassword]
+Change password of Users.
+
++ Request (application/json)
+
+        {
+            "newpassword": "123456",
+            "oldpassword": "654321"
+        }
+    
++ Response 200 (application/json)
+
+        {
+            "code":"PASSWORD_UPDATED",
+            "message":"Password updated!",
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code":"PASSWORD_WRONG",
+            "message":"Current password is invalid!",
+        }
+        
+        {
+            "code":"PASSWORD_NOT_MATCH",
+            "message":"Current password is invalid!",
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
         }
