@@ -167,6 +167,11 @@ User signup
             "message":"The email already exist!",
         }
         
+         {
+            "code":"EMAIL_INVALID",
+            "message":"The email is invalid!",
+        }
+        
 + Response 500 (application/json)
 
         {
@@ -180,7 +185,7 @@ Forgot password.
 + Request (application/json)
 
         {
-            "email": "duclongbuivn@gmail.com",
+            "Name": "duclong",
             "phone": "083243315",
         }
     
@@ -193,14 +198,15 @@ Forgot password.
         
 + Response 401 (application/json)
 
-        {
-          "code": "EMAIL_NOT_FOUND_ERROR",
-          "message": "Email Not Found!"
-        }
         
         {
           "code": "PHONENUMBER_NOT_FOUND_ERROR",
           "message": "Phone numeber Not Found!"
+        }
+        
+        {
+          "code": "USER_NAME_NOT_FOUND_ERROR",
+          "message": "User name Not Found!"
         }
         
 + Response 500 (application/json)
@@ -210,13 +216,13 @@ Forgot password.
           "message": "error message"
         }
         
-### Update User Infomation [PUT /api/users/]
+### Update User Infomation [PUT /api/users]
 Update Users infomation.
 
 + Request (application/json)
 
         {
-            "id": 1,
+            "id": "1",
             "email": "duclongbuivn@gmail.com",
             "password": "123456",
             "name": "logn",
@@ -229,7 +235,7 @@ Update Users infomation.
 
         {
           "code": "UPDATE_SUCCESS",
-          "message": "request confirmed!"
+          "message": "Request confirmed!"
         }
         
 + Response 400 (application/json)
@@ -239,10 +245,6 @@ Update Users infomation.
             "message":"Data error"
         }
         
-        {
-          "code": "ID_REQUIRED",
-          "message": "Invalid access ID! ID is required!"
-        }
         
 + Response 401 (application/json)
 
@@ -251,7 +253,12 @@ Update Users infomation.
           "message": "Invalid access token! Authentication is required!"
         }
         
-### Change Password [GET /api/users/changepassword]
+        {
+          "code": "AUTH_ERROR",
+          "message": "Access token is invalid!"
+        }
+        
+### Change Password [POST /api/authorization/changePassword]
 Change password of Users.
 
 + Request (application/json)
@@ -278,6 +285,44 @@ Change password of Users.
         {
             "code":"PASSWORD_NOT_MATCH",
             "message":"Current password is invalid!",
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }  
+        
+### Check Update Version [POST /api/update/version]
+Check update verison, if current version is less than force version update, return true
+
++ Request (application/json)
+
+        {
+            "os": "android",
+            "current_version": "1.0.1"
+        }
+    
++ Response 200 (application/json)
+
+        {
+            "update": true,
+            "version":"1.0.3",
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code":"VERSION_WRONG",
+            "message":"Can't compare version to check update",
         }
         
 + Response 401 (application/json)
