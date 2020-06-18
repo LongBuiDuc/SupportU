@@ -245,7 +245,6 @@ Update Users infomation.
             "message":"Data error"
         }
         
-        
 + Response 401 (application/json)
 
         {
@@ -294,12 +293,49 @@ Change password of Users.
           "message": "Invalid access token! Authentication is required!"
         }
         
+        {
+          "code": "AUTH_ERROR",
+          "message": "Access token is invalid!"
+        }
+        
 + Response 500 (application/json)
 
         {
             "code":"DB_ERROR",
             "message":"Cannot execute query!",
-        }  
+        }
+        
+### UploadFile [POST /api/file/upload]
+Upload File.
+
++ Request (application/json)
+
+        {
+            "Content-Disposition": "form-data; name="images[files]"; filename="image1.jpg",filename="image2.jpg",filename="image3.jpg""
+        }
+    
++ Response 200 (application/json)
+
+        {
+            "filePaths":[
+              "https://backend-resource.s3.ap-northeast-2.amazonaws.com/URK7865529/1000_F_135455671_IDuus0CbgMpizEhhN09JdxEWQDHVMf1V-2019-11-05-33-32.jpg",
+              "https://backend-resource.s3.ap-northeast-2.amazonaws.com/URK7865529/1000_F_135455671_IDuus0CbgMpizEhhN09JdxEWQDHVMf1V-2019-11-05-33-32.jpg",
+              "https://backend-resource.s3.ap-northeast-2.amazonaws.com/URK7865529/1000_F_135455671_IDuus0CbgMpizEhhN09JdxEWQDHVMf1V-2019-11-05-33-32.jpg"
+            ],
+            "size": "42KB"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
+        {
+          "code": "AUTH_ERROR",
+          "message": "Access token is invalid!"
+        }
         
 ### Check Update Version [POST /api/update/version]
 Check update verison, if current version is less than force version update, return true
