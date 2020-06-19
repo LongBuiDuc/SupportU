@@ -25,6 +25,88 @@ We must catch common errors in all API to ensure our application works properly.
 |---------------------------|-------------------------|------------------------------|
 |           401             |     unauthorized        |    Authen fail               |
 
+## Group General
+Get general infomations.        
+### Check Update Version [POST /api/update/version]
+Check update verison, if current version is less than force version update, return true.
+Not need authentication
+
++ Request (application/json)
+
+        {
+            "os": "android",
+            "current_version": "1.0.1"
+        }
+    
++ Response 200 (application/json)
+
+        {
+            "update": true,
+            "version":"1.0.3",
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code":"VERSION_WRONG",
+            "message":"Can't compare version to check update",
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Get All Univercities [GET /api/univercities]
+Get all univercities.
+Not need authentication
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id":1,
+                "name":"Seoul Technolozy University",
+                "created_date":"2020-06-19T10:29:29",
+                "update_date":"2020-06-19T10:29:29"
+            },
+            {
+                "id":2,
+                "name":"Seoul Intenational University",
+                "created_date":"2020-06-19T10:29:29",
+                "update_date":"2020-06-19T10:29:29"
+            },
+            {
+                "id":3,
+                "name":"Kangnam University",
+                "created_date":"2020-06-19T10:29:29",
+                "update_date":"2020-06-19T10:29:29"
+            }
+        ]
+
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }  
+        
 ## Group User
 Polls is a simple API allowing consumers to view polls and vote in them.
 ### Get User Info [GET /api/users/{id}]
@@ -371,42 +453,4 @@ Upload File.
         {
           "code": "AUTH_ERROR",
           "message": "Access token is invalid!"
-        }
-        
-### Check Update Version [POST /api/update/version]
-Check update verison, if current version is less than force version update, return true
-
-+ Request (application/json)
-
-        {
-            "os": "android",
-            "current_version": "1.0.1"
-        }
-    
-+ Response 200 (application/json)
-
-        {
-            "update": true,
-            "version":"1.0.3",
-        }
-        
-+ Response 400 (application/json)
-
-        {
-            "code":"VERSION_WRONG",
-            "message":"Can't compare version to check update",
-        }
-        
-+ Response 401 (application/json)
-
-        {
-          "code": "AUTH_REQUIRED",
-          "message": "Invalid access token! Authentication is required!"
-        }
-        
-+ Response 500 (application/json)
-
-        {
-            "code":"DB_ERROR",
-            "message":"Cannot execute query!",
         }
