@@ -179,13 +179,50 @@ User signup
             "message":"Cannot execute query!",
         }
         
-### Forgot Password [POST /api/authorization/forgotpassword/]
+### Forgot Email [POST /api/forgot/email]
 Forgot password.
 
 + Request (application/json)
 
         {
-            "Name": "duclong",
+            "name": "duclong",
+            "phone": "083243315",
+        }
+    
++ Response 200 (application/json)
+
+        {
+            "email":"duclongbuivn@gmail.com"
+        }
+        
++ Response 400 (application/json)
+
+        
+        {
+          "code": "PHONENUMBER_NOT_FOUND_ERROR",
+          "message": "Phone numeber Not Found!"
+        }
+        
+        {
+          "code": "USER_NAME_NOT_FOUND_ERROR",
+          "message": "User name Not Found!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+          "code": "INTERNAL_SERVER_ERROR",
+          "message": "error message"
+        }
+
+        
+### Forgot Password [POST /api/authorization/forgotpassword]
+Forgot password.
+
++ Request (application/json)
+
+        {
+            "name": "duclong",
             "phone": "083243315",
         }
     
@@ -196,7 +233,7 @@ Forgot password.
             "message":"Password will be sent to the email registration!"
         }
         
-+ Response 401 (application/json)
++ Response 400 (application/json)
 
         
         {
