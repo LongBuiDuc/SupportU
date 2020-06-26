@@ -298,9 +298,10 @@ Forgot password.
         {
           "code": "INTERNAL_SERVER_ERROR",
           "message": "error message"
-        }        
+        }      
+        
 ## Group User
-Polls is a simple API allowing consumers to view polls and vote in them.
+
 ### Get User Info [GET /api/users/{id}]
 Get user infomation.
 
@@ -453,4 +454,86 @@ Upload File.
         {
           "code": "AUTH_ERROR",
           "message": "Access token is invalid!"
+        }
+        
+## Group FCM
+For push notification
+
+### Update Fcm Token [POST /fcm/token]
+Send registration id(fcm token) to backend
+
+* Status `200` - Update token success
+* Status `400` - Error
+* Status `401` - Authentication is required!
+* Status `500` - Internal Server Error
+
++ Request (application/json)
+        
+        {
+            "fcmToken":"Azoskcmvj79kgmnelepekwcjipuy8tfjf"
+        }
+
++ Response 200
+
+        {
+            "code":"FCM_TOKEN_UPDATED",
+            "message":"Fcm Token Updated!"
+        }
+     
++ Response 400 (application/json)
+        
+        {
+            "code":"DATA_ERROR",
+            "message":"Data error",
+        }
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+        
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"error message"
+        }  
+
+### Push Notification [POST /fcm.googleapis.com/fcm/send]
+Data structure for push notification
+Have many event to push and receive notification, i define some event, we should additional during working.
+Data push and receive in data json :
+    "data": {
+    
+    }
+ 
+![name](https://docs.microsoft.com/en-us/xamarin/android/data-cloud/google-messaging/firebase-cloud-messaging-images/01-server-fcm-app.png)
+
+Sample:
+|         Event      |     Message                                                            |                                         
+|--------------------|------------------------------------------------------------------------|
+|  streaming_request |    You have new request to join your todo/wish                         |  
+|     live_start     |    Your todo/wish is start streaming after 10 seconds                  |                                             |
+|     matched_d1     |    Your streaming have one day left before start streaming             |
+|   follow_streaming |    Your streaming have new follower                                    |
+|  streaming_upload  |    New todo/list is uploaded                                           |
+
++ Response 200 (application/json)
+
+        {
+           "evt":"live_start",
+           "message":"Your todo/wish is start streaming after 5 seconds",
+           "msgData":{
+              "orderNo":123,
+              "taskType ":"TODO/WISH",
+              "title":"Travel make you richer",
+              "type":"VR/NORMAL",
+              "user":{
+                 "userSeq":123,
+                 "userName":"Long Bui",
+                 "profileImage":"https://cache.desktopnexus.com/thumbseg/2351/2351437-bigthumbnail.jpg"
+              }
+           }
         }
