@@ -456,6 +456,68 @@ Upload File.
           "message": "Access token is invalid!"
         }
         
+## Group Class
+### Create Classes [POST /api/classes/create]    
+Create class
+
++ Request (application/json)
+        
+        {
+            "name": "class name",
+            "description": "1"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "name": "course name",
+            "description": "1",
+            "userId": 1,
+            "createdDate": "2020-06-25T08:41:40",
+            "updateDate": "2020-06-25T08:41:43"
+        }   
+        
+### Get My Class [GET /api/classes]    
+Get all my classes
+
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "name": "course name",
+                "description": "1",
+                "userId": 1,
+                "createdDate": "2020-06-25T08:41:40",
+                "updateDate": "2020-06-25T08:41:43"
+            },
+            {
+                "id": 2,
+                "name": "Course name 2",
+                "description": "Description 2",
+                "userId": 2,
+                "createdDate": "2020-06-23T16:47:34",
+                "updateDate": "2020-06-23T16:47:36"
+            }
+        ]
+        
+### Delete My Class [DELETE /api/classes/{id}]    
+Delete my classes. Only owner who created class can be delete their class
+
++ Response 200
+
+        {
+            "code":"DELETE_SUCCESS",
+            "message":"Delete class successfuly"
+        }
++ Response 400 (application/json)
+        
+        {
+            "code":"OWER_ERROR",
+            "message":"Can't delete class is not of yourseft created",
+        }
+        
 ## Group Courses
 ### Create Courses [POST /api/courses/create]    
 Create courses
@@ -463,7 +525,6 @@ Create courses
 + Request (application/json)
         
         {
-            "id": 1,
             "name": "course name",
             "description": "1"
         }
@@ -529,7 +590,7 @@ Create assignment
 + Request (application/json)
         
         {
-            "id": 1,
+            "course_id": 1,
             "name": "assignment name",
             "description": "1"
         }
