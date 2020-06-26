@@ -456,10 +456,58 @@ Upload File.
           "message": "Access token is invalid!"
         }
         
+## Group Courses
+### Create Courses [POST /api/courses/create]    
+Create courses
+
++ Request (application/json)
+        
+        {
+            "id": 1,
+            "name": "course name",
+            "description": "1"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "name": "course name",
+            "description": "1",
+            "userId": 1,
+            "createdDate": "2020-06-25T08:41:40",
+            "updateDate": "2020-06-25T08:41:43"
+        }
+
+
+### Get My Courses [GET /api/courses]    
+Get all my courses
+
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "name": "course name",
+                "description": "1",
+                "userId": 1,
+                "createdDate": "2020-06-25T08:41:40",
+                "updateDate": "2020-06-25T08:41:43"
+            },
+            {
+                "id": 2,
+                "name": "Course name 2",
+                "description": "Description 2",
+                "userId": 2,
+                "createdDate": "2020-06-23T16:47:34",
+                "updateDate": "2020-06-23T16:47:36"
+            }
+        ]
+        
 ## Group FCM
 For push notification
 
-### Update Fcm Token [POST /fcm/token]
+### Update Fcm Token [POST /api/fcm/token]
 Send registration id(fcm token) to backend
 
 * Status `200` - Update token success
