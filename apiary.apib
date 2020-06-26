@@ -503,6 +503,47 @@ Get all my courses
                 "updateDate": "2020-06-23T16:47:36"
             }
         ]
+### Comment Courses [POST /api/courses/comment]    
+Comment a course
+
++ Request (application/json)
+        
+        {
+            "content": "How long of this course?"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "content": "How long of this course?",
+            "userId": 1,
+            "createdDate": "2020-06-25T08:41:40",
+            "updateDate": "2020-06-25T08:41:43"
+        }
+        
+## Group Assignments
+### Create Assignment [POST /api/assignments/create]    
+Create assignment
+
++ Request (application/json)
+        
+        {
+            "id": 1,
+            "name": "assignment name",
+            "description": "1"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "name": "assignment name",
+            "description": "1",
+            "userId": 1,
+            "createdDate": "2020-06-25T08:41:40",
+            "updateDate": "2020-06-25T08:41:43"
+        }     
         
 ## Group FCM
 For push notification
