@@ -478,7 +478,28 @@ Create class
             "updateDate": "2020-06-25T08:41:43"
         }   
         
-### Get My Class [GET /api/classes]    
+### Edit Classes [PUT /api/classes/edit]    
+Edit class
+
++ Request (application/json)
+        
+        {
+            "name": "class name",
+            "description": "1"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "name": "course name",
+            "description": "1",
+            "userId": 1,
+            "createdDate": "2020-06-25T08:41:40",
+            "updateDate": "2020-06-25T08:41:43"
+        }  
+        
+### Get My Classes [GET /api/classes]    
 Get all my classes
 
 + Response 200
@@ -502,7 +523,7 @@ Get all my classes
             }
         ]
         
-### Delete My Class [DELETE /api/classes/{id}]    
+### Delete Class [DELETE /api/classes/{id}]    
 Delete my classes. Only owner who created class can be delete their class
 
 + Response 200
@@ -564,6 +585,44 @@ Get all my courses
                 "updateDate": "2020-06-23T16:47:36"
             }
         ]
+        
+### Delete Course [DELETE /api/courses/{id}]    
+Delete my course. Only owner who created course can be delete their course
+
++ Response 200
+
+        {
+            "code":"DELETE_SUCCESS",
+            "message":"Delete course successfuly"
+        }
++ Response 400 (application/json)
+        
+        {
+            "code":"OWER_ERROR",
+            "message":"Can't delete course is not of yourseft created",
+        }
+        
+### Edit Course [PUT /api/courses/edit]    
+Edit courses
+
++ Request (application/json)
+        
+        {
+            "name": "class name",
+            "description": "1"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "name": "course name",
+            "description": "1",
+            "userId": 1,
+            "createdDate": "2020-06-25T08:41:40",
+            "updateDate": "2020-06-25T08:41:43"
+        }    
+        
 ### Comment Courses [POST /api/courses/comment]    
 Comment a course
 
@@ -600,11 +659,35 @@ Create assignment
         {
             "id": 1,
             "name": "assignment name",
-            "description": "1",
-            "userId": 1,
+            "description": "Description of assignment",
+            "courseId": 1,
             "createdDate": "2020-06-25T08:41:40",
             "updateDate": "2020-06-25T08:41:43"
         }     
+        
+### Get Assignment Of Course [GET /api/assignments/{course_id}]    
+Get all assignment of course
+
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "name": "assignment name",
+                "description": "Description of assignment",
+                "courseId": 1,
+                "createdDate": "2020-06-25T08:41:40",
+                "updateDate": "2020-06-25T08:41:43"
+            },   
+            {
+                "id": 2,
+                "name": "assignment name",
+                "description": "Description of assignment",
+                "courseId": 1,
+                "createdDate": "2020-06-25T08:41:40",
+                "updateDate": "2020-06-25T08:41:43"
+            }     
+        ]
         
 ## Group FCM
 For push notification
