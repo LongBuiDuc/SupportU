@@ -688,6 +688,75 @@ Get all assignment of course
                 "updateDate": "2020-06-25T08:41:43"
             }     
         ]
+
+## Group Quizs
+### Create Quizs [POST /api/quizs/create]    
+Create quizs
+
++ Request (application/json)
+        
+        {
+            "course_id": 1,
+            "name": "quizs name",
+            "description": "Description"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "name": "quizs name",
+            "description": "Description of quizs",
+            "courseId": 1,
+            "createdDate": "2020-06-25T08:41:40",
+            "updateDate": "2020-06-25T08:41:43"
+        }    
+
+## Group Discussion
+### Create Discussion [POST /api/discussions/create]    
+Create Discussion
+
++ Request (application/json)
+        
+        {
+            "course_id": 1,
+            "name": "discussion name",
+            "description": "Description"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "name": "discussion name",
+            "description": "Description of discussion",
+            "courseId": 1,
+            "createdDate": "2020-06-25T08:41:40",
+            "updateDate": "2020-06-25T08:41:43"
+        }    
+
+## Group Materials
+### Create Materials [POST /api/materials/create]    
+Create Materials
+
++ Request (application/json)
+        
+        {
+            "course_id": 1,
+            "name": "materials name",
+            "description": "Description"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "name": "materials name",
+            "description": "Description of materials",
+            "courseId": 1,
+            "createdDate": "2020-06-25T08:41:40",
+            "updateDate": "2020-06-25T08:41:43"
+        } 
         
 ## Group FCM
 For push notification
