@@ -607,19 +607,56 @@ Create class
 Edit class
 
 + Request (application/json)
-        
+
         {
             "name": "class name",
-            "description": "1"
+            "professor_name": "Hong Kim Dong Prof",
+            "code": "123A",
+            "semester": "0000year",
+            "classification_number": "123",
+            "course_classification": "123",
+            "creadits": 1000,
+            "maximum_student": 20,
+            "classroom": "Room",
+            "lecture_time": "2020-06-25T08:41:40",
+            "advisor": "UserName1",
+            "invite_students": "UserName2",
+            "availability": "yes",
+            "chatting_room": "yes",
+            "introduction": "intro...",
+            "objectives": "object...",
+            "learning_method": "online",
+            "grading_method": "online",
+            "excercise_by_week": "1",
+            "number_week": 2,
+            "syllabus": "abcxyz"
         }
 
 + Response 200
 
         {
             "id": 1,
-            "name": "course name",
-            "description": "1",
-            "userId": 1,
+            "name": "class name",
+            "professor_name": "Hong Kim Dong Prof",
+            "code": "123A",
+            "semester": "0000year",
+            "classification_number": "123",
+            "course_classification": "123",
+            "creadits": 1000,
+            "maximum_student": 20,
+            "classroom": "Room",
+            "lecture_time": "2020-06-25T08:41:40",
+            "advisor": "UserName1",
+            "invite_students": "UserName2",
+            "availability": "yes",
+            "chatting_room": "yes",
+            "introduction": "intro...",
+            "objectives": "object...",
+            "learning_method": "online",
+            "grading_method": "online",
+            "excercise_by_week": "1",
+            "number_week": 2,
+            "syllabus": "abcxyz"
             "createdDate": "2020-06-25T08:41:40",
             "updateDate": "2020-06-25T08:41:43"
         }  
