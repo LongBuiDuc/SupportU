@@ -659,7 +659,21 @@ Edit class
             "syllabus": "abcxyz"
             "createdDate": "2020-06-25T08:41:40",
             "updateDate": "2020-06-25T08:41:43"
-        }  
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
         
 ### Get My Classes [GET /api/classes]    
 Get all my classes
