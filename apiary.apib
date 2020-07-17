@@ -849,7 +849,21 @@ Create assignment
             "attachments": [{abcxyz}, {abcxyz}],
             "createdDate": "2020-06-25T08:41:40",
             "updateDate": "2020-06-25T08:41:43"
-        }     
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
         
 ### Get Assignment Of Course [GET /api/assignments/{course_id}]    
 Get all assignment of course
