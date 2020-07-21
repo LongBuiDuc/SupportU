@@ -888,26 +888,45 @@ Get all assignment of course
         ]
 
 ## Group Quizs
-### Create Quizs [POST /api/quizs/create]    
+### Create Quizs [POST /api/quizs/create/{classId}]    
 Create quizs
 
 + Request (application/json)
-        
+
         {
-            "course_id": 1,
-            "name": "quizs name",
-            "description": "Description"
-        }
+            "week": 1,
+            "title": "quizs name",
+            "description": "Description",
+            "total_score": 100,
+            "due_date": "2020-06-25T08:41:40",
+            "questions": [
+                {
+                    "type": "mutiple",
+                    "question": "What are you doing?",
+                    "answers": "abcxyz",
+                    "score": 100
+                },
+                {
+                    "type": "responsive",
+                    "question": "What are you doing?",
+                    "score": 200
+                }
+            ]
+        } 
 
 + Response 200
 
         {
-            "id": 1,
-            "name": "quizs name",
-            "description": "Description of quizs",
-            "courseId": 1,
-            "createdDate": "2020-06-25T08:41:40",
-            "updateDate": "2020-06-25T08:41:43"
+            "id": 7,
+            "week": 1,
+            "title": "quizs name",
+            "description": "Description",
+            "class_id": 2,
+            "total_score": 100,
+            "due_date": "2020-06-25T08:41:40",
+            "questions": "2,3",
+            "createdDate": "2020-07-21T16:13:04.7638687+07:00",
+            "updateDate": null
         }    
 
 ## Group Discussions
