@@ -976,19 +976,19 @@ Create Discussion
 + Request (application/json)
 
         {
-            "week": 1,
             "title": "discussion name",
-            "description": "Description",
+            "description": "description",
+            "week": 1,
             "totalScore": 100,
             "dueDate": "2020-06-25T08:41:40",
             "topics": [
                 {
-                    "topicName": "topic 1",
+                    "topicName": "mutiple",
                     "score": 100
                 },
                 {
-                    "topicName": "topic 2",
-                    "score": 200
+                    "topicName": "mutiple",
+                    "score": 100
                 }
             ]
         } 
@@ -996,16 +996,33 @@ Create Discussion
 + Response 200
 
         {
-            "id": 1,
-            "title": "discussion name",
-            "description": "Description of discussion",
-            "classId": 1,
+            "id": 146,
             "week": 1,
+            "title": "discussion name",
+            "description": "description",
+            "classId": 2,
             "totalScore": 100,
             "dueDate": "2020-06-25T08:41:40",
-            "topics": "1,2"
+            "topics": [
+                {
+                    "id": 77,
+                    "topicName": "mutiple",
+                    "score": 100,
+                    "discussionId": 146,
+                    "createdDate": "2020-07-30T10:32:03",
+                    "updateDate": null
+                },
+                {
+                    "id": 78,
+                    "topicName": "mutiple",
+                    "score": 100,
+                    "discussionId": 146,
+                    "createdDate": "2020-07-30T10:32:03",
+                    "updateDate": null
+                }
+            ],
             "createdDate": "2020-06-25T08:41:40",
-            "updateDate": "2020-06-25T08:41:43"
+            "updateDate": null
         }
 
 + Response 500 (application/json)
