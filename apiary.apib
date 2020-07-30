@@ -1042,32 +1042,30 @@ Create Materials
             "title": "title",
             "description": "Description",
             "totalScore": 100,
-            "due_date": "2020-06-25T08:41:40",
-            "topics": [
-                {
-                    "topic_name": "mutiple",
-                    "score": 100
-                },
-                {
-                    "topic_name": "mutiple",
-                    "score": 100
-                }
-            ]
+            "dueDate": "2020-06-25T08:41:40",
+            "format": "REFERENCE_MATERIAL",
+            "url": "C://ESD",
+            "attachedFile": ["http://file1.excel", "http:file2.png"]
         } 
 
 + Response 200
 
         {
-            "id": 21,
+            "id": 33,
             "title": "title",
             "description": "Description",
-            "class_id": 2,
+            "classId": 2,
             "week": 5,
-            "total_score": 0,
-            "due_date": "2020-06-25T08:41:40",
-            "topics": "18,19",
-            "createdDate": "2020-07-23T17:11:44.165563+07:00",
-            "updateDate": null
+            "totalScore": 100,
+            "dueDate": "2020-06-25T08:41:40",
+            "format": "REFERENCE_MATERIAL",
+            "url": "C://ESD",
+            "createdDate": "2020-07-30T11:05:01",
+            "updateDate": null,
+            "attachedFile": [
+                "http://file1.excel",
+                "http:file2.png"
+            ]
         }
         
 + Response 500 (application/json)
