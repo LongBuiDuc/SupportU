@@ -923,15 +923,39 @@ Create quizs
 + Response 200
 
         {
-            "id": 7,
+            "id": 102,
             "week": 1,
             "title": "quizs name",
             "description": "Description",
             "classId": 2,
             "totalScore": 100,
             "dueDate": "2020-06-25T08:41:40",
-            "questions": "2,3",
-            "createdDate": "2020-07-21T16:13:04.7638687+07:00",
+            "questions": [
+                {
+                    "id": 138,
+                    "type": "MULTIPLE",
+                    "question": "What are you doing?",
+                    "answers": [
+                        "abcxyz",
+                        "abcxyz"
+                    ],
+                    "quizId": 102,
+                    "score": 100,
+                    "createdDate": "2020-07-30T10:16:20.367485+07:00",
+                    "updateDate": null
+                },
+                {
+                    "id": 139,
+                    "type": "RESPONSIVE",
+                    "question": "What are you doing?",
+                    "answers": null,
+                    "quizId": 102,
+                    "score": 200,
+                    "createdDate": "2020-07-30T10:16:20.6476524+07:00",
+                    "updateDate": null
+                }
+            ],
+            "createdDate": "2020-07-30T10:16:19.3140983+07:00",
             "updateDate": null
         }
 
