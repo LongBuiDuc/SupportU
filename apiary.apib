@@ -556,9 +556,9 @@ Create class
             "creadits": 1000,
             "maximumStudent": 20,
             "classroom": "Room",
-            "lectureTime": "2020-06-25T08:41:40",
-            "advisor": ["1", "2" , "3"],
-            "inviteStudents": ["1", "2" , "3"],
+            "lectureTime": "2020-06-25",
+            "advisor": [1, 2 , 3],
+            "inviteStudents": [1, 2 , 3],
             "availability": "PUBLIC",
             "chattingRoom": "yes",
             "introduction": "intro...",
@@ -566,6 +566,7 @@ Create class
             "learningMethod": "online",
             "gradingMethod": "online",
             "excerciseByWeek": "1",
+            "addingExcercise": "abcxyz",
             "numberWeek": 2,
             "syllabus": [
                 {
@@ -584,7 +585,7 @@ Create class
 + Response 200
 
         {
-            "id": 27,
+            "id": 34,
             "name": "class name",
             "userId": 1,
             "professorName": "Hong Kim Dong Prof",
@@ -596,32 +597,38 @@ Create class
             "creadits": 1000,
             "maximumStudent": 20,
             "classroom": "Room",
-            "lectureTime": "2020-06-25T08:41:40",
+            "lectureTime": "2020-06-25",
             "advisor": [
                 {
-                    "name": "long1",
+                    "id": 1,
+                    "name": "user 1",
                     "avatar": ""
                 },
                 {
-                    "name": "Admin",
+                    "id": 2,
+                    "name": "user 2",
                     "avatar": ""
                 },
                 {
-                    "name": "Sonlee",
+                    "id": 3,
+                    "name": "user 3",
                     "avatar": ""
                 }
             ],
             "inviteStudents": [
                 {
-                    "name": "long1",
+                    "id": 1,
+                    "name": "user 1",
                     "avatar": ""
                 },
                 {
-                    "name": "Admin",
+                    "id": 2,
+                    "name": "user 2",
                     "avatar": ""
                 },
                 {
-                    "name": "Sonlee",
+                    "id": 3,
+                    "name": "user 3",
                     "avatar": ""
                 }
             ],
@@ -632,29 +639,30 @@ Create class
             "learningMethod": "online",
             "gradingMethod": "online",
             "excerciseByWeek": "1",
+            "addingExcercise": "abcxyz",
             "numberWeek": 2,
             "syllabus": [
                 {
-                    "id": 9,
-                    "classId": 27,
+                    "id": 23,
+                    "classId": 34,
                     "week": "week1",
                     "topic": "topic 1",
                     "content": "abcxyz",
-                    "createdDate": "2020-08-04T11:27:55.7417998+07:00",
-                    "updateDate": null
+                    "createdDate": "2020-08-04T10:05:07.6102143Z",
+                    "updateDate": "2020-08-04T10:05:07.6102629Z"
                 },
                 {
-                    "id": 10,
-                    "classId": 27,
+                    "id": 24,
+                    "classId": 34,
                     "week": "week2",
                     "topic": "topic 2",
                     "content": "abcxyz",
-                    "createdDate": "2020-08-04T11:27:55.9816472+07:00",
-                    "updateDate": null
+                    "createdDate": "2020-08-04T10:05:07.8980627Z",
+                    "updateDate": "2020-08-04T10:05:07.898065Z"
                 }
             ],
-            "createdDate": "2020-08-04T04:27:53.5227399Z",
-            "updateDate": null
+            "createdDate": "2020-08-04T10:05:05.4323841Z",
+            "updateDate": "2020-08-04T10:05:05.4323841Z"
         }
         
 + Response 401 (application/json)
