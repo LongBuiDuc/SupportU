@@ -1206,6 +1206,20 @@ Create Attendance
             "updateDate": "2020-07-30T12:32:27",
         }
         
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
 + Response 500 (application/json)
 
         {
@@ -1237,7 +1251,7 @@ Send registration id(fcm token) to backend
         }
      
 + Response 400 (application/json)
-        
+
         {
             "code":"DATA_ERROR",
             "message":"Data error",
