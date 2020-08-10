@@ -775,6 +775,13 @@ Get all my classes
             }
         ]
         
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ### Delete Class [DELETE /api/classes/{id}]    
 Delete my classes. Only owner who created class can be delete their class
 
@@ -790,7 +797,40 @@ Delete my classes. Only owner who created class can be delete their class
             "code":"OWER_ERROR",
             "message":"Can't delete class is not of yourseft created",
         }
-        
+
+### Select Advisor [GET /api/classes/select/advisor]    
+Select advisor. 
+
++ Response 200
+
+        [
+            {
+            "id": 49,
+            "name": "user 16",
+            "idNumber": 33
+            },
+            {
+                "id": 50,
+                "name": "user 17",
+                "idNumber": 0
+            },
+            {
+                "id": 51,
+                "name": "user 18",
+                "idNumber": 0
+            },
+            {
+                "id": 53,
+                "name": "user 20",
+                "idNumber": 0
+            },
+            {
+                "id": 54,
+                "name": "user 21",
+                "idNumber": 0
+            }
+        ]
+
 ## Group Courses
 ### Create Courses [POST /api/courses/create]    
 Create courses
