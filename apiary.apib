@@ -919,6 +919,31 @@ Get detail informatioin of class
                 "numberWeek": 2
         }
 
+### Get class syllabus [GET /api/classes/detail/classsyllabus/{classId}]    
+Get class syllabus 
+
++ Response 200
+
+        {
+            "syllabus": [
+                {
+                    "id": 4,
+                    "week": 1,
+                    "topic": "topic 1"
+                },
+                {
+                    "id": 5,
+                    "week": 1,
+                    "topic": "topic 1"
+                },
+                {
+                    "id": 6,
+                    "week": 1,
+                    "topic": "topic 1"
+                }
+            ]
+        }
+
 ## Group Courses
 ### Create Courses [POST /api/courses/create]    
 Create courses
