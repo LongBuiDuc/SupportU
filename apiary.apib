@@ -870,6 +870,60 @@ Select Student.
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+
+### Get Detail information of Class(Student) [GET /api/classes/detail/{classId}]    
+Get detail information of class(student)
+
++ Response 200
+
+        {
+            "id": 2,
+            "name": "Class name 2",
+            "userId": 2,
+            "professorName": "Hong Kim Dong Prof",
+            "faculty": null,
+            "code": "34T",
+            "semester": "0000year",
+            "classIficationNumber": "455",
+            "courseClassification": "55",
+            "creadits": 2000,
+            "maximumStudent": 15,
+            "classroom": "Room",
+            "lectureTime": "2020-07-15 15:54:04",
+            "advisor": [
+                {
+                    "id": 1,
+                    "name": "user 1",
+                    "avatar": ""
+                },
+                {
+                    "id": 2,
+                    "name": "teacher",
+                    "avatar": "http://teacher.avatar.png"
+                },
+                {
+                    "id": 3,
+                    "name": "user 3",
+                    "avatar": ""
+                }
+            ],
+            "availability": "yes",
+            "chattingRoom": "yes",
+            "introduction": "intro...",
+            "objectives": "object...",
+            "learningMethod": "online",
+            "gradingMethod": "online",
+            "excerciseByWeek": "1",
+            "addingExcercise": null,
+            "numberWeek": 2
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
         
 ## Group Courses
 ### Create Courses [POST /api/courses/create]    
