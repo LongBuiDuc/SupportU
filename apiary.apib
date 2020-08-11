@@ -919,8 +919,8 @@ Get detail informatioin of class
                 "numberWeek": 2
         }
 
-### Get class syllabus [GET /api/classes/detail/classsyllabus/{classId}]    
-Get class syllabus 
+### Get detail class syllabus [GET /api/classes/detail/classsyllabus/{classId}]    
+Get detail class syllabus 
 
 + Response 200
 
@@ -940,6 +940,31 @@ Get class syllabus
                     "id": 6,
                     "week": 1,
                     "topic": "topic 1"
+                }
+            ]
+        }
+
+### Get detail course information [GET /api/classes/detail/courseinformation/{classId}]    
+Create detail course information
+
++ Response 200
+
+        {
+           "assignments": [
+                {
+                    "id": 2,
+                    "week": 2,
+                    "title": "assignment name 2"
+                },
+                {
+                    "id": 4,
+                    "week": 3,
+                    "title": "assignment name"
+                },
+                {
+                    "id": 5,
+                    "week": 3,
+                    "title": "assignment name"
                 }
             ]
         }
