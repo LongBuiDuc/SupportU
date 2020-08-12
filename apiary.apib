@@ -918,7 +918,14 @@ Get detail informatioin of class
                 "addingExcercise": null,
                 "numberWeek": 2
         }
+        
++ Response 500 (application/json)
 
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ### Get detail class syllabus [GET /api/classes/detail/classsyllabus/{classId}]    
 Get detail class syllabus 
 
@@ -943,7 +950,14 @@ Get detail class syllabus
                 }
             ]
         }
+        
++ Response 500 (application/json)
 
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ### Get detail course information [GET /api/classes/detail/courseinformation/{classId}]    
 Create detail course information
 
@@ -996,6 +1010,58 @@ Create detail course information
                     "title": "title"
                 }
             ]
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+
+### Get detail class learning status [GET /api/classes/detail/classlearningstatus/{classId}]    
+Get detail class syllabus 
+
++ Response 200
+
+        {
+            "assignmentLearningStatuses": [
+            {
+                "id": 2,
+                "dueDate": "2020-08-20T03:08:48",
+                "totalScore": 30,
+                "score": 5
+            }
+            ],
+            "discussionLearningStatuses": [
+                {
+                    "id": 2,
+                    "dueDate": "2020-07-31T04:44:31",
+                    "totalScore": 0,
+                    "score": 50
+                }
+            ],
+            "quizLearningStatuses": [
+                {
+                    "id": 2,
+                    "dueDate": "2020-07-31T04:44:31",
+                    "totalScore": 0,
+                    "score": 30
+                }
+            ],
+            "attendanceLearningStatuses": [
+                {
+                    "id": 2,
+                    "week": 5,
+                    "status": "Absent"
+                }
+            ]
+        }
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
         }
 
 ## Group Courses
