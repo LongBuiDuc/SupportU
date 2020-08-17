@@ -1635,25 +1635,23 @@ Create Color
 + Request (application/json)
 
         {
-             "color": null
+            "week": 5,
+            "title": "title",
+            "description": "Description",
+            "url" : "https://localhost:44369"
         }
         
 + Response 200
 
         {
-            "id": 12,
-            "classId": 7,
-            "userId": 1,
-            "color": "#C55A11FF",
-            "createdDate": "2020-08-17T06:51:04",
-            "updateDate": "2020-08-17T06:51:04"
-        }
-        
-+ Response 401 (application/json)
-
-        {
-            "code":"AUTH_REQUIRED",
-            "message":"Invalid access token! Authentication is required!"
+           "id": 2,
+            "classId": 2,
+            "week": 5,
+            "title": "title",
+            "description": "Description",
+            "url": "https://localhost:44369",
+            "createdDate": "2020-08-10T09:37:57",
+            "updateDate": "2020-08-10T09:37:57"
         }
         
 + Response 500 (application/json)
