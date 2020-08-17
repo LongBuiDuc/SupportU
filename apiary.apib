@@ -1627,7 +1627,7 @@ Edit User Settings
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
-
+        
 ## Group Color
 ### Create Color Setting [POST api/classstudents/colorsetting/{classId}]    
 Create Color
@@ -1635,23 +1635,25 @@ Create Color
 + Request (application/json)
 
         {
-            "week": 5,
-            "title": "title",
-            "description": "Description",
-            "url" : "https://localhost:44369"
+             "color": null
         }
         
 + Response 200
 
         {
-           "id": 2,
-            "classId": 2,
-            "week": 5,
-            "title": "title",
-            "description": "Description",
-            "url": "https://localhost:44369",
-            "createdDate": "2020-08-10T09:37:57",
-            "updateDate": "2020-08-10T09:37:57"
+            "id": 12,
+            "classId": 7,
+            "userId": 1,
+            "color": "#C55A11FF",
+            "createdDate": "2020-08-17T06:51:04",
+            "updateDate": "2020-08-17T06:51:04"
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
         }
         
 + Response 500 (application/json)
@@ -1661,7 +1663,38 @@ Create Color
             "message":"Cannot execute query!",
         }
         
+### Edit Color Setting [PUT api/classstudents/colorsetting/{classId}]    
+Edit Color
 
++ Request (application/json)
+
+        {
+             "color": null
+        }
++ Response 200
+
+        {
+            "id": 12,
+            "classId": 7,
+            "userId": 1,
+            "color": "#C55A11FF",
+            "createdDate": "2020-08-17T06:51:04",
+            "updateDate": "2020-08-17T06:51:04"
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group FCM
 For push notification
 
