@@ -547,6 +547,7 @@ Create class
 
         {
             "name": "class name",
+            "name_eng":"name in english",
             "professorName": "Hong Kim Dong Prof",
             "faculty": "abcxyz",
             "code": "123A",
@@ -556,8 +557,28 @@ Create class
             "creadits": 1000,
             "maximumStudent": 20,
             "classroom": "Room",
-            "lectureTime": "2020-06-25",
-            "advisor": [1, 2 , 3],
+            "lectureTimes": [
+                   {
+                    "day": "MON",
+                    "fromHour": "15:30",
+                    "toHour": "19:10"
+                    },
+                    {
+                    "day": "TUE",
+                    "fromHour": "16:30",
+                    "toHour": "18:10"
+                    }
+            ],
+            "advisor": [
+                   {
+                    "userId": 123,
+                    "role": "VIEWER "
+                    },
+                    {
+                    "userId": 123,
+                    "role": "FULL_CONTROL "
+                    }
+            ],
             "inviteStudents": [1, 2 , 3],
             "availability": "PUBLIC",
             "chattingRoom": "yes",
