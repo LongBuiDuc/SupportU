@@ -548,8 +548,8 @@ Create class
 + Request (application/json)
 
         {
-            "name": "class name",
-            "name_eng":"name in english",
+           "name": "class name",
+            "nameEng": "class name english",
             "professorName": "Hong Kim Dong Prof",
             "faculty": "abcxyz",
             "code": "123A",
@@ -559,27 +559,27 @@ Create class
             "creadits": 1000,
             "maximumStudent": 20,
             "classroom": "Room",
-            "lectureTimes": [
-                   {
+            "lectureTimes":[
+                {
                     "day": "MON",
                     "fromHour": "15:30",
                     "toHour": "19:10"
-                    },
-                    {
+                },
+                {
                     "day": "TUE",
                     "fromHour": "16:30",
                     "toHour": "18:10"
-                    }
+                }
             ],
-            "advisor": [
-                   {
+            "advisors":[
+                {
                     "userId": 123,
-                    "role": "VIEWER "
-                    },
-                    {
+                    "role": "VIEWER"
+                },
+                {
                     "userId": 456,
-                    "role": "FULL_CONTROL "
-                    }
+                    "role": "FULL_CONTROL"
+                }
             ],
             "inviteStudents": [1, 2 , 3],
             "availability": "PUBLIC",
@@ -591,14 +591,15 @@ Create class
             "excerciseByWeek": "1",
             "addingExcercise": "abcxyz",
             "numberWeek": 2,
+            "color": "#FF0000FF",
             "syllabus": [
                 {
-                    "week": "week1",
+                    "week": 1,
                     "topic": "topic 1",
                     "content": "abcxyz"
                 },
                 {
-                    "week": "week2",
+                    "week": 2,
                     "topic": "topic 2",
                     "content": "abcxyz"
                 }
@@ -608,84 +609,106 @@ Create class
 + Response 201
 
         {
-            "id": 34,
-            "name": "class name",
-            "userId": 1,
-            "professorName": "Hong Kim Dong Prof",
-            "faculty": "abcxyz",
-            "code": "123A",
-            "semester": "0000year",
-            "classIficationNumber": "123",
-            "courseClassification": "123",
-            "creadits": 1000,
-            "maximumStudent": 20,
-            "classroom": "Room",
-            "lectureTime": "2020-06-25",
-            "advisor": [
-                {
-                    "id": 1,
-                    "name": "user 1",
-                    "avatar": ""
-                },
-                {
-                    "id": 2,
-                    "name": "user 2",
-                    "avatar": ""
-                },
-                {
-                    "id": 3,
-                    "name": "user 3",
-                    "avatar": ""
-                }
-            ],
-            "inviteStudents": [
-                {
-                    "id": 1,
-                    "name": "user 1",
-                    "avatar": ""
-                },
-                {
-                    "id": 2,
-                    "name": "user 2",
-                    "avatar": ""
-                },
-                {
-                    "id": 3,
-                    "name": "user 3",
-                    "avatar": ""
-                }
-            ],
-            "availability": "PUBLIC",
-            "chattingRoom": "yes",
-            "introduction": "intro...",
-            "objectives": "object...",
-            "learningMethod": "online",
-            "gradingMethod": "online",
-            "excerciseByWeek": "1",
-            "addingExcercise": "abcxyz",
-            "numberWeek": 2,
-            "syllabus": [
-                {
-                    "id": 23,
-                    "classId": 34,
-                    "week": "week1",
-                    "topic": "topic 1",
-                    "content": "abcxyz",
-                    "createdDate": "2020-07-30T12:32:27",
-                    "updateDate": "2020-07-30T12:32:27"
-                },
-                {
-                    "id": 24,
-                    "classId": 34,
-                    "week": "week2",
-                    "topic": "topic 2",
-                    "content": "abcxyz",
-                    "createdDate": "2020-07-30T12:32:27",
-                    "updateDate": "2020-07-30T12:32:27"
-                }
-            ],
-            "createdDate": "2020-07-30T12:32:27",
-            "updateDate": "2020-07-30T12:32:27"
+               "id": 60,
+                "name": "class name",
+                "nameEng": "class name english",
+                "userId": 1,
+                "professorName": "Hong Kim Dong Prof",
+                "faculty": "abcxyz",
+                "code": "123A",
+                "semester": "0000year",
+                "classIficationNumber": "123",
+                "courseClassification": "123",
+                "creadits": 1000,
+                "maximumStudent": 20,
+                "classroom": "Room",
+                "lectureTimes": [
+                    {
+                        "id": 7,
+                        "classId": 60,
+                        "day": "MON",
+                        "fromHour": "15:30",
+                        "toHour": "19:10",
+                        "createdDate": "2020-08-18T10:06:34",
+                        "updateDate": "2020-08-18T10:06:34"
+                    },
+                    {
+                        "id": 8,
+                        "classId": 60,
+                        "day": "TUE",
+                        "fromHour": "16:30",
+                        "toHour": "18:10",
+                        "createdDate": "2020-08-18T10:06:34",
+                        "updateDate": "2020-08-18T10:06:34"
+                    }
+                ],
+                "advisors": [
+                    {
+                        "id": 5,
+                        "classId": 60,
+                        "userId": 1,
+                        "role": "VIEWER",
+                        "createdDate": "2020-08-18T10:06:34",
+                        "updateDate": "2020-08-18T10:06:34"
+                    },
+                    {
+                        "id": 6,
+                        "classId": 60,
+                        "userId": 1,
+                        "role": "FULL_CONTROL",
+                        "createdDate": "2020-08-18T10:06:35",
+                        "updateDate": "2020-08-18T10:06:35"
+                    }
+                ],
+                "inviteStudents": [
+                    {
+                        "id": 1,
+                        "name": "tieulong",
+                        "avatar": ""
+                    },
+                    {
+                        "id": 2,
+                        "name": "teacher1",
+                        "avatar": "http://18.162.141.53/api.supportu/1597386001285_2___1597386001284___13244753_1382109491805277_4936278203817120154_n.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "name": "user 3",
+                        "avatar": ""
+                    }
+                ],
+                "availability": "PUBLIC",
+                "chattingRoom": "yes",
+                "introduction": "intro...",
+                "objectives": "object...",
+                "learningMethod": "online",
+                "gradingMethod": "online",
+                "excerciseByWeek": "1",
+                "addingExcercise": "abcxyz",
+                "numberWeek": 2,
+                "syllabus": [
+                    {
+                        "id": 62,
+                        "classId": 60,
+                        "week": 1,
+                        "topic": "topic 1",
+                        "content": "abcxyz",
+                        "createdDate": "2020-08-18T10:06:35",
+                        "updateDate": "2020-08-18T10:06:35"
+                    },
+                    {
+                        "id": 63,
+                        "classId": 60,
+                        "week": 2,
+                        "topic": "topic 2",
+                        "content": "abcxyz",
+                        "createdDate": "2020-08-18T10:06:36",
+                        "updateDate": "2020-08-18T10:06:36"
+                    }
+                ],
+                "color": "#FF0000FF",
+                "createdDate": "2020-08-18T10:06:33",
+                "updateDate": "2020-08-18T10:06:33"
         }
         
 + Response 401 (application/json)
