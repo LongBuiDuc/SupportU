@@ -1630,17 +1630,13 @@ Edit User Settings
         
 ## Group Color
 ### Select Color Setting [POST /api/ClassStudents/colorsetting/{classId}]
-Send registration id(fcm token) to backend
-
-* Status `200` - Update token success
-* Status `400` - Error
-* Status `401` - Authentication is required!
-* Status `500` - Internal Server Error
+Select color
 
 + Request (application/json)
+
         
         {
-            "":""
+            "color": null
         }
 
 + Response 200
@@ -1667,9 +1663,11 @@ Send registration id(fcm token) to backend
             "code":"AUTH_REQUIRED",
             "message":"Invalid access token! Authentication is required!"
         }
+        
 
 + Response 500 (application/json)
-        
+
+
         {
             "code":"INTERNAL_SERVER_ERROR",
             "message":"error message"
