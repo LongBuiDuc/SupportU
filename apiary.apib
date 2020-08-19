@@ -924,29 +924,27 @@ Get detail informatioin of class
 + Response 200
 
         {
-                "id": 2,
-                "name": "Class name 2",
-                "userId": 2,
+               "id": 63,
+                "name": "class name",
+                "userId": 1,
                 "professorName": "Hong Kim Dong Prof",
-                "faculty": null,
-                "code": "34T",
+                "faculty": "abcxyz",
+                "code": "123A",
                 "semester": "0000year",
-                "classIficationNumber": "455",
-                "courseClassification": "55",
-                "creadits": 2000,
-                "maximumStudent": 15,
-                "classroom": "Room",
-                "lectureTime": "2020-07-15 15:54:04",
-                "advisor": [
+                "classIficationNumber": "123",
+                "courseClassification": "123",
+                "creadits": 1000,
+                "maximumStudent": 20,
+                "students": [
                     {
                         "id": 1,
-                        "name": "user 1",
+                        "name": "tieulong",
                         "avatar": ""
                     },
                     {
                         "id": 2,
-                        "name": "teacher",
-                        "avatar": "http://teacher.avatar.png"
+                        "name": "teacher1",
+                        "avatar": "http://18.162.141.53/api.supportu/1597386001285_2___1597386001284___13244753_1382109491805277_4936278203817120154_n.jpg"
                     },
                     {
                         "id": 3,
@@ -954,14 +952,47 @@ Get detail informatioin of class
                         "avatar": ""
                     }
                 ],
-                "availability": "yes",
+                "classroom": "Room",
+                "lectureTime": [
+                    {
+                        "id": 11,
+                        "classId": 63,
+                        "day": "MON",
+                        "fromHour": "15:30",
+                        "toHour": "19:10",
+                        "createdDate": "2020-08-18T03:17:14",
+                        "updateDate": "2020-08-18T03:17:14"
+                    },
+                    {
+                        "id": 12,
+                        "classId": 63,
+                        "day": "TUE",
+                        "fromHour": "16:30",
+                        "toHour": "18:10",
+                        "createdDate": "2020-08-18T03:17:14",
+                        "updateDate": "2020-08-18T03:17:14"
+                    }
+                ],
+                "advisors": [
+                    {
+                        "id": 1,
+                        "name": "tieulong",
+                        "avatar": ""
+                    },
+                    {
+                        "id": 1,
+                        "name": "tieulong",
+                        "avatar": ""
+                    }
+                ],
+                "availability": "PUBLIC",
                 "chattingRoom": "yes",
                 "introduction": "intro...",
                 "objectives": "object...",
                 "learningMethod": "online",
                 "gradingMethod": "online",
                 "excerciseByWeek": "1",
-                "addingExcercise": null,
+                "addingExcercise": "abcxyz",
                 "numberWeek": 2
         }
         
