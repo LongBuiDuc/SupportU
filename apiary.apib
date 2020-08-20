@@ -1222,6 +1222,57 @@ Get detail attendance
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get detail Score status [GET /api/detail/score/{classId}]    
+Get detail Score
++ Response 200
+
+        {
+               "lstScore": {
+                "assignmentScore": [
+                    {
+                        "id": 2,
+                        "totalScore": 30,
+                        "score": 5
+                    },
+                    {
+                        "id": 4,
+                        "totalScore": 100,
+                        "score": 7
+                    }
+                ],
+                "discussionScore": [
+                    {
+                        "id": 2,
+                        "totalScore": 0,
+                        "score": 50
+                    }
+                ],
+                "quizScore": [
+                    {
+                        "id": 2,
+                        "totalScore": 0,
+                        "score": 30
+                    }
+                ]
+            },
+            "score": 92,
+            "total": 130
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 
 ## Group Courses
 ### Create Courses [POST /api/courses/create]    
