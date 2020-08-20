@@ -1673,28 +1673,30 @@ Create User Settings
 
         {
             "notice": true,
-            "post": true,
-            "comment": false,
-            "invitation": true,
-            "submitting": false,
-            "advisor": true,
-            "language": "ENGLISH"
-        }
-        
-+ Response 200
-
-        {
-            "id": 3,
-            "userId": 1,
-            "notice": true,
-            "post": true,
+            "post": false,
             "comment": false,
             "invitation": true,
             "submitting": false,
             "advisor": true,
             "language": "ENGLISH",
-            "createdDate": "2020-08-10T10:03:06",
-            "updateDate": "2020-08-10T10:03:06"
+            "alignment": "NEAREST SCHEDULE"
+        }
+        
++ Response 200
+
+        {
+            "id": 6,
+            "userId": 1,
+            "notice": true,
+            "post": false,
+            "comment": false,
+            "invitation": true,
+            "submitting": false,
+            "advisor": true,
+            "language": "ENGLISH",
+            "alignment": "Nearest schedule",
+            "createdDate": "2020-08-13T00:45:05",
+            "updateDate": "2020-08-20T06:09:00"
         }
 + Response 401 (application/json)
 
@@ -1721,7 +1723,8 @@ Edit User Settings
             "invitation": true,
             "submitting": false,
             "advisor": true,
-            "language": "ENGLISH"
+            "language": "ENGLISH",
+            "alignment": "NEAREST SCHEDULE"
         }
         
 + Response 200
@@ -1736,9 +1739,60 @@ Edit User Settings
             "submitting": false,
             "advisor": true,
             "language": "ENGLISH",
+            "alignment": "NEAREST SCHEDULE",
             "createdDate": "2020-08-10T10:03:06",
             "updateDate": "2020-08-10T10:03:06"
         }
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+
+### Edit Class Notice Settings [POST /api/UserSettings/classnotice]    
+Class Notice Settings
++ Request (application/json)
+
+        {
+            "ClassNoticeSettings":[
+                {
+                    "classId": 1,
+                    "notice": false
+                },
+                {
+                    "classId": 65,
+                    "notice": false
+                }
+            ]
+        }
+        
++ Response 200
+
+        {
+           [
+                {
+                    "id": 1,
+                    "userId": 1,
+                    "classId": 1,
+                    "notice": false
+                },
+                {
+                    "id": 2,
+                    "userId": 1,
+                    "classId": 65,
+                    "notice": false
+                }
+            ]
+        }
+        
 + Response 401 (application/json)
 
         {
