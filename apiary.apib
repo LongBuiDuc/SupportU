@@ -1301,6 +1301,49 @@ Get detail score
             "message":"Cannot execute query!",
         }
 
+### Get detail attendance quiz [GET /api/attendancequiz/{classId}/{week}]    
+Get detail attendance quiz
++ Response 200
+
+        {
+            "time": 10,
+            "querry": {
+                "id": 1,
+                "question": "What is the color of professor’s coat?"
+            },
+            "lstAnswer": [
+                {
+                    "id": 1,
+                    "answer": "abc"
+                },
+                {
+                    "id": 2,
+                    "answer": "abc"
+                },
+                {
+                    "id": 3,
+                    "answer": "abc"
+                },
+                {
+                    "id": 4,
+                    "answer": "abc"
+                }
+            ]
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Courses
 ### Create Courses [POST /api/courses/create]    
 Create courses
