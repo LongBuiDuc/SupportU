@@ -1150,37 +1150,64 @@ Get detail duedate
 + Response 200
 
         {
-            "assignmentLearningStatuses": [
-            {
-                "id": 2,
-                "dueDate": "2020-08-20T03:08:48",
-                "totalScore": 30,
-                "score": 5
-            }
-            ],
-            "discussionLearningStatuses": [
+               "lstAssignment": [
+                {
+                    "id": 1,
+                    "dueDate": "2020-07-22T03:08:44",
+                    "submit": false
+                },
                 {
                     "id": 2,
-                    "dueDate": "2020-07-31T04:44:31",
-                    "totalScore": 0,
-                    "score": 50
+                    "dueDate": "2020-08-20T03:08:48",
+                    "submit": true
+                },
+                {
+                    "id": 46,
+                    "dueDate": "2020-08-20T09:45:00",
+                    "submit": false
+                },
+                {
+                    "id": 47,
+                    "dueDate": "2020-08-06T13:30:00",
+                    "submit": false
+                },
+                {
+                    "id": 63,
+                    "dueDate": "2020-08-04T00:22:15",
+                    "submit": false
                 }
             ],
-            "quizLearningStatuses": [
+            "lstDiscussion": [
                 {
-                    "id": 2,
-                    "dueDate": "2020-07-31T04:44:31",
-                    "totalScore": 0,
-                    "score": 30
+                    "id": 10,
+                    "dueDate": "2020-08-07T04:44:26",
+                    "submit": false
+                },
+                {
+                    "id": 19,
+                    "dueDate": "2020-08-07T04:44:26",
+                    "submit": true
+                },
+                {
+                    "id": 97,
+                    "dueDate": "2020-08-27T02:55:23",
+                    "submit": false
                 }
             ],
-            "attendanceLearningStatuses": [
+            "lstQuiz": [
                 {
-                    "id": 2,
-                    "week": 5,
-                    "status": "Absent"
+                    "id": 1,
+                    "dueDate": "2020-08-07T04:44:26",
+                    "submit": true
+                },
+                {
+                    "id": 156,
+                    "dueDate": "2020-08-27T02:55:23",
+                    "submit": false
                 }
-            ]
+            ],
+            "submit": 3,
+            "notSubmit": 7
         }
 + Response 500 (application/json)
 
