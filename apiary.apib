@@ -917,6 +917,36 @@ Select Student.
             "message":"Cannot execute query!",
         }
         
+### Delete student in Class [DELETE /api/classstudents/export]    
+Delete student in Class
+
++ Request (application/json)
+
+        {
+            "studentsID":[4,5]
+        }
+
++ Response 200
+
+        {
+            "code": "DELETE_SUCCESS",
+            "message": "Deleted Successfully!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group Detail Information of Classes
 ### Get detail information of class [GET /api/classesdetail/detail/{classId}]    
 Get detail informatioin of class
