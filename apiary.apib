@@ -1150,7 +1150,7 @@ Get detail duedate
 + Response 200
 
         {
-               "lstAssignment": [
+               "assignments": [
                 {
                     "id": 1,
                     "title": "abc",
@@ -1182,7 +1182,7 @@ Get detail duedate
                     "submit": false
                 }
             ],
-            "lstDiscussion": [
+            "discussions": [
                 {
                     "id": 10,
                     "title": "abc",
@@ -1202,7 +1202,7 @@ Get detail duedate
                     "submit": false
                 }
             ],
-            "lstQuiz": [
+            "quizs": [
                 {
                     "id": 1,
                     "title": "abc",
@@ -1231,7 +1231,7 @@ Get detail attendance
 + Response 200
 
         {
-            "lstAttendance": [
+            "attendances": [
                 {
                     "id": 1,
                     "week": 1,
@@ -1265,38 +1265,37 @@ Get detail score
 + Response 200
 
         {
-               "lstScore": {
-                "assignmentScore": [
-                    {
-                        "id": 2,
-                        "title": "abc",
-                        "totalScore": 30,
-                        "score": 5
-                    },
-                    {
-                        "id": 4,
-                        "title": "abc",
-                        "totalScore": 100,
-                        "score": 7
-                    }
-                ],
-                "discussionScore": [
-                    {
-                        "id": 2,
-                        "title": "abc",
-                        "totalScore": 0,
-                        "score": 50
-                    }
-                ],
-                "quizScore": [
-                    {
-                        "id": 2,
-                        "title": "abc",
-                        "totalScore": 0,
-                        "score": 30
-                    }
-                ]
-            },
+            "assignments": [
+                {
+                    "id": 2,
+                    "title": "abc",
+                    "totalScore": 30,
+                    "score": 5
+                },
+                {
+                    "id": 4,
+                    "title": "abc",
+                    "totalScore": 100,
+                    "score": 7
+                }
+            ],
+            "discussions": [
+                {
+                    "id": 2,
+                    "title": "abc",
+                    "totalScore": 0,
+                    "score": 50
+                }
+            ],
+            "quizs": [
+                {
+                    "id": 2,
+                    "title": "abc",
+                    "totalScore": 0,
+                    "score": 30
+                }
+            ],
+
             "score": 92,
             "total": 130
         }
@@ -1325,7 +1324,7 @@ Get detail attendance quiz
                 "id": 1,
                 "question": "What is the color of professor’s coat?"
             },
-            "lstAnswer": [
+            "answers": [
                 {
                     "id": 1,
                     "answer": "abc"
