@@ -946,7 +946,46 @@ Delete student in Class
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
-        
+
+### POST Enroll in Classes [GET /api/classstudents/registration/{classId}]    
+Get Enroll in classes
+
++ Request (application/json)
+
+        {
+            "inviteCode": "23E"
+        }
+
++ Response 200
+
+        {
+            "code": "REGISTRATION_SUCCESS",
+            "message": "Registration success!"
+        }
++ Response 400
+
+        {
+            "code": "USER_REGISTERED",
+            "message": "User already registered!"
+        }
+        {
+            "code": "INVITECODE_INVALID",
+            "message": "The invite code is invalid!"
+        }
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+  
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Detail Information of Classes
 ### Get detail information of class [GET /api/classesdetail/detail/{classId}]    
 Get detail informatioin of class
