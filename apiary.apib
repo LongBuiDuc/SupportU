@@ -1874,6 +1874,57 @@ Create Attendance
             "message":"Cannot execute query!",
         }
 
+### Create Attendance Submit [POST /api/attendances/create/submit/{attendanceId}]    
+Create Attendance Submit
+
+status: ATTENDANCE / ABSENT / LATE
+
++ Request (application/json)
+
+        {
+            "answer": 3,
+            "status": "ABSENT"
+        }
+        
++ Response 200
+
+        {
+            "id": 8,
+            "attendance": {
+                "id": 5,
+                "userId": 1,
+                "classId": 2,
+                "week": 6,
+                "time": 20,
+                "questionId": 2,
+                "answers": "13,14,15,16",
+                "createdDate": "2020-08-12T01:55:31",
+                "updateDate": "2020-08-12T01:55:31"
+            },
+            "user": {
+                "id": 1,
+                "name": "tieulong",
+                "idNumber": 1,
+                "avatar": ""
+            },
+            "answer": 3,
+            "status": "ABSENT",
+            "createdDate": "2020-08-24T04:39:03",
+            "updateDate": "2020-08-24T04:39:03"
+        }
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Lives
 ### Create Lives [POST /api/Lives/create/{classId}]    
 Create Lives
