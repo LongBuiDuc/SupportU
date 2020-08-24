@@ -1142,6 +1142,37 @@ Get course information for Student
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get detail class student list [GET /api/classstudents/studentlist/{classId}]    
+Get detail class syllabus 
+
++ Response 200
+
+        {
+            "students": [
+                {
+                    "id": 1,
+                    "name": "tieulong",
+                    "idNumber": 1,
+                    "avatar": ""
+                },
+                {
+                    "id": 2,
+                    "name": "teacher1",
+                    "idNumber": 123456,
+                    "avatar": "http://18.162.141.53/api.supportu/1597386001285_2___1597386001284___13244753_1382109491805277_4936278203817120154_n.jpg"
+                }
+            ],
+            "numberStudent": 2,
+            "maximumStudent": 15
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 
 ## Group Detail Information of Classes Learning Status
 ### Get detail duedate status [GET /api/detail/duedate/{classId}]    
