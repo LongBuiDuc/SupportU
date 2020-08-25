@@ -1410,35 +1410,63 @@ Get detail score
             "message":"Cannot execute query!",
         }
 
-### Get detail attendance quiz [GET /api/classesdetail/detail/attendancequiz/{classId}]    
-Get detail attendance quiz
+### Get detail attendance status for student [GET /api/classesdetail/detail/attendancestatus/{classId}]    
+Get detail attendance status for studen
 + Response 200
 
         {
-            "id": 1,
-            "time": 10,
-            "question": {
-                "id": 1,
-                "question": "What is the color of professor’s coat?",
-                "classId": 1,
-                "week": 1
-            },
-            "answers": [
+            "attendances": [
                 {
                     "id": 1,
-                    "answer": "abc"
+                    "week": 1,
+                    "status": "Absent"
                 },
                 {
                     "id": 2,
-                    "answer": "abc"
-                },
+                    "week": 5,
+                    "status": "Absent"
+                }
+            ],
+            "absent": 2
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Get detail attendance status for professor [GET /api/classesdetail/detail/attendanceinfo/{classId}]    
+Get detail attendance status for studen
++ Response 200
+
+        {
+           [
                 {
-                    "id": 3,
-                    "answer": "abc"
+                    "id": 1,
+                    "week": 1,
+                    "numSubmit": 2,
+                    "maxNumber": 15
                 },
                 {
                     "id": 4,
-                    "answer": "abc"
+                    "week": 1,
+                    "numSubmit": 2,
+                    "maxNumber": 15
+                },
+                {
+                    "id": 2,
+                    "week": 5,
+                    "numSubmit": 1,
+                    "maxNumber": 15
                 }
             ]
         }
@@ -1456,6 +1484,7 @@ Get detail attendance quiz
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+
 ## Group Courses
 ### Create Courses [POST /api/courses/create]    
 Create courses
@@ -1952,63 +1981,35 @@ status: ATTENDANCE / ABSENT / LATE
             "message":"Cannot execute query!",
         }
         
-### Get detail attendance status for student [GET /api/classesdetail/detail/attendancestatus/{classId}]    
-Get detail attendance status for studen
+### Get detail attendance quiz [GET /api/classesdetail/detail/attendancequiz/{classId}]    
+Get detail attendance quiz
 + Response 200
 
         {
-            "attendances": [
+            "id": 1,
+            "time": 10,
+            "question": {
+                "id": 1,
+                "question": "What is the color of professor’s coat?",
+                "classId": 1,
+                "week": 1
+            },
+            "answers": [
                 {
                     "id": 1,
-                    "week": 1,
-                    "status": "Absent"
+                    "answer": "abc"
                 },
                 {
                     "id": 2,
-                    "week": 5,
-                    "status": "Absent"
-                }
-            ],
-            "absent": 2
-        }
-        
-+ Response 401 (application/json)
-
-        {
-            "code":"AUTH_REQUIRED",
-            "message":"Invalid access token! Authentication is required!"
-        }
-
-+ Response 500 (application/json)
-
-        {
-            "code":"INTERNAL_SERVER_ERROR",
-            "message":"Cannot execute query!",
-        }
-        
-### Get detail attendance status for professor [GET /api/classesdetail/detail/attendanceinfo/{classId}]    
-Get detail attendance status for studen
-+ Response 200
-
-        {
-           [
+                    "answer": "abc"
+                },
                 {
-                    "id": 1,
-                    "week": 1,
-                    "numSubmit": 2,
-                    "maxNumber": 15
+                    "id": 3,
+                    "answer": "abc"
                 },
                 {
                     "id": 4,
-                    "week": 1,
-                    "numSubmit": 2,
-                    "maxNumber": 15
-                },
-                {
-                    "id": 2,
-                    "week": 5,
-                    "numSubmit": 1,
-                    "maxNumber": 15
+                    "answer": "abc"
                 }
             ]
         }
@@ -2026,6 +2027,8 @@ Get detail attendance status for studen
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+
         
         
 ## Group Lives
