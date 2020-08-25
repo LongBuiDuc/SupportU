@@ -1015,7 +1015,7 @@ Post Enroll in classes
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
-## Group Detail Information of Classes
+## Group Detail Information of Classes for Student
 ### Get detail information of class [GET /api/classesdetail/detail/{classId}]    
 Get detail informatioin of class
 
@@ -1271,10 +1271,9 @@ Get detail class student list
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
-
-## Group Detail Information of Classes Learning Status
-### Get detail duedate status [GET /api/classesdetail/detail/duedate/{classId}]    
-Get detail duedate
+        
+### Get detail duedate status [GET /api/classesdetail/detail/student/duedate/{classId}]    
+Get detail duedate of student
 
 + Response 200
 
@@ -1355,7 +1354,6 @@ Get detail duedate
             "message":"Cannot execute query!",
         }
 
-        
 ### Get detail score status [GET /api/classesdetail/detail/score/{classId}]    
 Get detail score
 + Response 200
@@ -1409,8 +1407,8 @@ Get detail score
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
-
-### Get detail attendance status for student [GET /api/classesdetail/detail/attendancestatus/{classId}]    
+        
+### Get detail attendance status [GET /api/classesdetail/detail/attendancestatus/{classId}]    
 Get detail attendance status for studen
 + Response 200
 
@@ -1443,6 +1441,7 @@ Get detail attendance status for studen
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+## Group Detail Information of Classes for Professor
         
 ### Get detail attendance status for professor [GET /api/classesdetail/detail/attendanceinfo/{classId}]    
 Get detail attendance status for studen
