@@ -1355,39 +1355,7 @@ Get detail duedate
             "message":"Cannot execute query!",
         }
 
-### Get detail attendance status for student [GET /api/classesdetail/detail/attendancestatus/{classId}]    
-Get detail attendance status for studen
-+ Response 200
 
-        {
-            "attendances": [
-                {
-                    "id": 1,
-                    "week": 1,
-                    "status": "Absent"
-                },
-                {
-                    "id": 2,
-                    "week": 5,
-                    "status": "Absent"
-                }
-            ],
-            "absent": 2
-        }
-        
-+ Response 401 (application/json)
-
-        {
-            "code":"AUTH_REQUIRED",
-            "message":"Invalid access token! Authentication is required!"
-        }
-
-+ Response 500 (application/json)
-
-        {
-            "code":"INTERNAL_SERVER_ERROR",
-            "message":"Cannot execute query!",
-        }
         
 ### Get detail attendance status for professor [GET /api/classesdetail/detail/attendanceinfo/{classId}]    
 Get detail attendance status for studen
@@ -2012,6 +1980,40 @@ status: ATTENDANCE / ABSENT / LATE
             "createdDate": "2020-08-24T04:39:03",
             "updateDate": "2020-08-24T04:39:03"
         }
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Get detail attendance status for student [GET /api/classesdetail/detail/attendancestatus/{classId}]    
+Get detail attendance status for studen
++ Response 200
+
+        {
+            "attendances": [
+                {
+                    "id": 1,
+                    "week": 1,
+                    "status": "Absent"
+                },
+                {
+                    "id": 2,
+                    "week": 5,
+                    "status": "Absent"
+                }
+            ],
+            "absent": 2
+        }
+        
 + Response 401 (application/json)
 
         {
