@@ -1548,6 +1548,55 @@ Get detail duedate status for professor
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get detail score status [GET /api/classesdetail/detail/staff/score/{classId}]    
+Get detail score
++ Response 200
+
+        {
+            "assignments": [
+                {
+                    "id": 2,
+                    "title": "abc",
+                    "score": 5
+                },
+                {
+                    "id": 4,
+                    "title": "abc",
+                    "score": 7
+                }
+            ],
+            "discussions": [
+                {
+                    "id": 2,
+                    "title": "abc",
+                    "score": 50
+                }
+            ],
+            "quizs": [
+                {
+                    "id": 2,
+                    "title": "abc",
+                    "score": 30
+                }
+            ],
+
+            "totalscore": 92,
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Courses
 ### Create Courses [POST /api/courses/create]    
 Create courses
