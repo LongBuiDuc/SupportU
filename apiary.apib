@@ -540,6 +540,58 @@ identity: STUDENT or PROFESSOR-EMPLOYEE
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Search Classes [GET /api/search/class{?keyword}]
+Search all classes infomation by name
+
++ Parameters
+    + keyword -  A query variable
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 63,
+                "className": "class name 2",
+                "professorName": "Hoang Kim Dong Prof",
+                "lectureCode": "123A",
+                "assignmentInfos": [],
+                "quizInfos": [],
+                "discussionInfos": [],
+                "classMaterialInfos": []
+            },
+            {
+                "id": 64,
+                "className": "class name 3",
+                "professorName": "Hobng Kim Dong Prof",
+                "lectureCode": "123A",
+                "assignmentInfos": [],
+                "quizInfos": [],
+                "discussionInfos": [],
+                "classMaterialInfos": []
+            }
+        ]
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
                 
 ## Group Classes
 ### Create Classes [POST /api/classes/create]    
