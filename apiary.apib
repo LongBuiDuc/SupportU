@@ -1455,7 +1455,7 @@ Get detail score
             "message":"Cannot execute query!",
         }
 
-### Get detail attendance quiz [GET /api/classesdetail/detail/attendancequiz/{classId}/{week}]    
+### Get detail attendance quiz [GET /api/classesdetail/detail/attendancequiz/{classId}]    
 Get detail attendance quiz
 + Response 200
 
@@ -1464,7 +1464,9 @@ Get detail attendance quiz
             "time": 10,
             "question": {
                 "id": 1,
-                "question": "What is the color of professor’s coat?"
+                "question": "What is the color of professor’s coat?",
+                "classId": 1,
+                "week": 1
             },
             "answers": [
                 {
