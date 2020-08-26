@@ -2247,6 +2247,43 @@ Get evaluate list of attendance quiz
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Post confirm attendance quiz [GET /api/attendances/confirm/attendancequiz/{attendanceSubmitId}]    
+Get confirm of attendance quiz
+
++ Request (application/json)
+
+        {
+           "status": "ATTENDANCE"
+        }
+        
++ Response 200
+
+        {
+            "code": "UPDATE_SUCCESS",
+            "message": "Request confirmed!"
+        }
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Lives
 ### Create Lives [POST /api/Lives/create/{classId}]    
 Create Lives
@@ -2258,8 +2295,8 @@ Create Lives
             "title": "title",
             "description": "Description",
             "url" : "https://localhost:44369"
-        } 
-
+        }
+        
 + Response 200
 
         {
