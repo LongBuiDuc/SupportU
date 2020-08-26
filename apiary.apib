@@ -2171,8 +2171,8 @@ Get detail attendance quiz
             "message":"Cannot execute query!",
         }
         
-### Get student list attendance quiz [GET /api/attendances/studentlist/attendancequiz/{classId}]    
-Get detail student list attendance quiz
+### Get student list of attendance quiz [GET /api/attendances/studentlist/attendancequiz/{classId}]    
+Get detail student list of attendance quiz
 + Response 200
 
         [
@@ -2198,6 +2198,41 @@ Get detail student list attendance quiz
                 "submit": false
             }
         ]
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Get detail attendance quiz for staff [GET /api/attendances/detail/staff/attendancequiz/{userId}/{attendanceId}]    
+Get evaluate list of attendance quiz
++ Response 200
+
+        {
+            "quiz": {
+                "id": 1,
+                "question": "What is the color of professor’s coat?"
+            },
+            "attendancesSubmit": {
+                "id": 1,
+                "answer": 3,
+                "createdDate": "2020-08-09T20:25:54",
+                "status": "ABSENT"
+            },
+            "answer": {
+                "answer": "abc",
+                "correct": false
+            }
+        }
         
 + Response 401 (application/json)
 
