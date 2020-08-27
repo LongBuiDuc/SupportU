@@ -644,7 +644,56 @@ Search all classes infomation by name
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
-                
+
+### Search Schools [GET /api/search/schools{?keyword}]
+Search school infomation by name
+
++ Parameters
+    + keyword -  A query variable
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "Seoul Technolozy University",
+                "createdDate": "2020-06-19T03:29:29",
+                "updateDate": "2020-06-19T03:29:34"
+            },
+            {
+                "id": 2,
+                "name": "Seoul Intenational University",
+                "createdDate": "2020-06-19T03:30:05",
+                "updateDate": "2020-06-19T03:30:09"
+            },
+            {
+                "id": 3,
+                "name": "Seoul Open University",
+                "createdDate": "2020-06-19T03:30:37",
+                "updateDate": "2020-06-19T03:30:40"
+            }
+        ]
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group Classes
 ### Create Classes [POST /api/classes/create]    
 Create class
