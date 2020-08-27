@@ -901,29 +901,132 @@ Edit class
             "message":"Cannot execute query!",
         }
         
-### Get My Classes [GET /api/classes]    
+### Get User Classes [GET /api/classes]    
 Get all my classes
 
 + Response 200
 
         [
-            {
-                "id": 1,
-                "name": "course name",
-                "description": "1",
-                "userId": 1,
-                "createdDate": "2020-07-30T12:32:27",
-                "updateDate": "2020-07-30T12:32:27"
-            },
-            {
-                "id": 2,
-                "name": "Course name 2",
-                "description": "Description 2",
-                "userId": 2,
-                "createdDate": "2020-07-30T12:32:27",
-                "updateDate": "2020-07-30T12:32:27"
-            }
+               {
+                    "id": 1,
+                    "className": "Class name 1",
+                    "professorName": "Hong Kim Dong Prof",
+                    "lectureCode": "132",
+                    "color": null,
+                    "absentTime": 0,
+                    "assignments": [
+                        {
+                            "id": 1,
+                            "week": 0,
+                            "title": "assignment name 1"
+                        },
+                        {
+                            "id": 2,
+                            "week": 0,
+                            "title": "assignment name 2"
+                        }
+                    ],
+                    "quizes": [
+                        {
+                            "id": 1,
+                            "week": 0,
+                            "title": "quiz 1"
+                        },
+                        {
+                            "id": 104,
+                            "week": 0,
+                            "title": "quizs name long test"
+                        }
+                    ],
+                    "discussions": [
+                        {
+                            "id": 1,
+                            "week": 0,
+                            "title": "discussion name 1"
+                        },
+                        {
+                            "id": 156,
+                            "week": 0,
+                            "title": "ttt"
+                        }
+                    ],
+                    "classMaterials": [
+                        {
+                            "id": 41,
+                            "week": 0,
+                            "title": "longbd title material"
+                        },
+                        {
+                            "id": 42,
+                            "week": 0,
+                            "title": "lllll"
+                        }
+                    ]
+                },
+                 {
+                    "id": 2,
+                    "className": "Class name 2",
+                    "professorName": "Hong Kim Dong Prof",
+                    "lectureCode": "133",
+                    "color": null,
+                    "absentTime": 0,
+                    "assignments": [
+                        {
+                            "id": 1,
+                            "week": 0,
+                            "title": "assignment name 1"
+                        },
+                        {
+                            "id": 2,
+                            "week": 0,
+                            "title": "assignment name 2"
+                        }
+                    ],
+                    "quizes": [
+                        {
+                            "id": 1,
+                            "week": 0,
+                            "title": "quiz 1"
+                        },
+                        {
+                            "id": 104,
+                            "week": 0,
+                            "title": "quizs name long test"
+                        }
+                    ],
+                    "discussions": [
+                        {
+                            "id": 1,
+                            "week": 0,
+                            "title": "discussion name 1"
+                        },
+                        {
+                            "id": 156,
+                            "week": 0,
+                            "title": "ttt"
+                        }
+                    ],
+                    "classMaterials": [
+                        {
+                            "id": 41,
+                            "week": 0,
+                            "title": "longbd title material"
+                        },
+                        {
+                            "id": 42,
+                            "week": 0,
+                            "title": "lllll"
+                        }
+                    ]
+                },
         ]
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
         
 + Response 500 (application/json)
 
