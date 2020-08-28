@@ -2481,6 +2481,39 @@ Get detail student list of attendance quiz modify
             "message":"Cannot execute query!",
         }
         
+### Get detail attendance modify [GET /api/attendances/detail/attendancemodification/{userId}/{attendanceId}]    
+Get detail attendance modify
++ Response 200
+
+        {
+            "id": 1,
+            "week": 1,
+            "attendanceSubmit": {
+                "id": 1,
+                "attendanceId": 1,
+                "userId": 1,
+                "answer": 3,
+                "status": "ATTENDANCE",
+                "reason": null,
+                "createdDate": "2020-08-09T20:25:54",
+                "updateDate": "2020-08-26T02:14:15"
+            }
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ### Put modify attendance quiz [PUT /api/attendances/modify/attendancequizsubmit/{userId}/{attendanceId}]    
 Get evaluate list of attendance quiz
 
