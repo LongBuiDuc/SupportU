@@ -2481,6 +2481,43 @@ Get detail student list of attendance quiz modify
             "message":"Cannot execute query!",
         }
         
+### Put modify attendance quiz [PUT /api/attendances/modify/attendancequizsubmit/{userId}/{attendanceId}]    
+Get evaluate list of attendance quiz
+
++ Request (application/json)
+
+        {
+               "status": "ATTENDANCE",
+                "reason": "I like it"
+        }
+        
++ Response 200
+
+        {
+            "code": "UPDATE_SUCCESS",
+            "message": "Request confirmed!"
+        }
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Lives
 ### Create Lives [POST /api/Lives/create/{classId}]    
 Create Lives
