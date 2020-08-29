@@ -1874,7 +1874,7 @@ Create assignment
             "totalScore": 100,
             "dueDate": "2020-06-25T08:41:43",
             "attachments": ["abcxyz", "abcxyz"]
-        }     
+        }
         
 + Response 200
 
@@ -1931,6 +1931,88 @@ Get all assignment of course
                 "updateDate": "2020-07-30T12:32:27"
             }     
         ]
+        
+### Get Detail Assignment  [GET /api/assignments/detail/{assignments_id}]    
+Get all assignment of course
+
++ Response 200
+
+        {
+           "id": 1,
+            "week": 2,
+            "title": "assignment 69",
+            "description": "assignment description 1",
+            "classId": 1,
+            "totalScore": 30,
+            "dueDate": "0001-01-01T00:00:00",
+            "attachments": [
+                "abcxyz",
+                " abcxyz"
+            ],
+            "createdDate": "2020-06-26T04:37:35",
+            "updateDate": "2020-08-29T00:23:59"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Put Assignment  [PUT /api/assignments/edit/{assignments_id}]    
+Edit assignment
+
++ Request (application/json)
+
+        {
+            "week": 3,
+            "title": "assignment name 1",
+            "description": "abcxyz",
+            "classId": 1,
+            "totalScore": 100,
+            "dueDate": "2020-06-25T08:41:43",
+            "attachments": ["abcxyz", "abcxyz"]
+        }
+
++ Response 200
+
+        {
+           "id": 1,
+            "week": 2,
+            "title": "assignment 69",
+            "description": "assignment description 1",
+            "classId": 1,
+            "totalScore": 30,
+            "dueDate": "0001-01-01T00:00:00",
+            "attachments": [
+                "abcxyz",
+                " abcxyz"
+            ],
+            "createdDate": "2020-06-26T04:37:35",
+            "updateDate": "2020-08-29T00:23:59"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 
 ## Group Quizs
 ### Create Quizs [POST /api/quizes/create/{classId}]    
