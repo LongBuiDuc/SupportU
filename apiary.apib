@@ -1967,7 +1967,7 @@ Get all assignment of course
             "message":"Cannot execute query!",
         }
         
-### Put Assignment  [PUT /api/assignments/edit/{assignments_id}]    
+### Edit Assignment  [PUT /api/assignments/edit/{assignments_id}]    
 Edit assignment
 
 + Request (application/json)
@@ -1998,6 +1998,70 @@ Edit assignment
             ],
             "createdDate": "2020-06-26T04:37:35",
             "updateDate": "2020-08-29T00:23:59"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Create Assignment Submit [POST /api/AssignmentsSubmits/create/{assignments_id}]    
+Create assignment submit
+
++ Request (application/json)
+
+        {
+            "attachments": ["abcxyz", "abcxyz"]
+        }
+
++ Response 200
+
+        {
+           
+            "id": 5,
+            "assignment": {
+                "id": 1,
+                "week": 2,
+                "title": "assignment 69",
+                "description": "assignment description 1",
+                "classId": 1,
+                "totalScore": 30,
+                "dueDate": "0001-01-01T00:00:00",
+                "attachments": "abcxyz, abcxyz",
+                "createdDate": "2020-06-26T04:37:35",
+                "updateDate": "2020-08-29T00:41:48"
+            },
+            "userId": 1,
+            "attacheds": [
+                "sdfssdfsd",
+                "fsdfsfsfdsd"
+            ],
+            "score": 0,
+            "createdDate": "2020-08-29T09:35:31",
+            "updateDate": "2020-08-29T09:35:31"
+        }
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
         }
         
 + Response 401 (application/json)
