@@ -2205,6 +2205,54 @@ Get assignment confirm
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Input Score Assignment submit [PUT /api/Assignments/inputscore/{assignments_id}]    
+Enter score assignment submit
+
++ Request (application/json)
+
+        {
+            "Scores": [
+                {
+                    "userId" : 4,
+                    "score": 10
+                },
+                {
+                    "userId" : 5,
+                    "score": 21
+                }
+            ]
+        }
+
++ Response 200
+
+        {
+           
+            "code": "UPDATE_SUCCESS",
+            "message": "Request confirmed!"
+
+        }
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Quizs
 ### Create Quizs [POST /api/quizes/create/{classId}]    
 Create quizs
