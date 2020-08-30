@@ -2064,6 +2064,42 @@ Create assignment submit for student
           "message": "Invalid access token! Authentication is required!"
         }
         
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+
+### Create Assignment Commnet [POST /api/AssignmentsComments/create/{assignments_id}]    
+Create assignment comment
+
++ Request (application/json)
+
+        {
+            "message": "Who I am?"
+        }
+
++ Response 200
+
+        {
+           
+            "id": 2,
+            "assignmentId": 1,
+            "userId": 1,
+            "message": "Who I am?",
+            "createdDate": "2020-08-30T03:34:04",
+            "updateDate": "2020-08-30T03:34:04"
+
+        }
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
 + Response 401 (application/json)
 
         {
@@ -2077,7 +2113,52 @@ Create assignment submit for student
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get All Assignment Commnet [POST /api/AssignmentsComments/?page=]    
+Get all assignment comment
 
+
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "assignmentId": 1,
+                "userId": 1,
+                "message": "Hello",
+                "createdDate": null,
+                "updateDate": null
+            },
+            {
+                "id": 2,
+                "assignmentId": 1,
+                "userId": 1,
+                "message": "Who I am",
+                "createdDate": "2020-08-29T20:34:04",
+                "updateDate": "2020-08-29T20:34:04"
+            }
+        ]
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Quizs
 ### Create Quizs [POST /api/quizes/create/{classId}]    
 Create quizs
