@@ -2159,6 +2159,52 @@ Get all assignment comment
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get List Student Assignment Submit [GET /api/Assignments/studentlist/assignmentsubmit/{assignmentId}]    
+Get assignment confirm
+
+
++ Response 200
+
+        [
+            {
+                "id": 4,
+                "name": "Student 1",
+                "idNumber": 4,
+                "avatar": "",
+                "attachment": "abc,abc",
+                "submit": true
+            },
+            {
+                "id": 5,
+                "name": "Student 2",
+                "idNumber": 5,
+                "avatar": "",
+                "attachment": "sdfssdfsd,fsdfsfsfdsd12321",
+                "submit": true
+            }
+        ]
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Quizs
 ### Create Quizs [POST /api/quizes/create/{classId}]    
 Create quizs
