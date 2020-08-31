@@ -887,55 +887,148 @@ Edit class
 
         {
             "name": "class name",
+            "nameEng": "class name english",
             "professorName": "Hong Kim Dong Prof",
+            "faculty": "abcxyz",
             "code": "123A",
             "semester": "0000year",
-            "classificationNumber": "123",
+            "classIficationNumber": "123456",
             "courseClassification": "123",
             "creadits": 1000,
             "maximumStudent": 20,
             "classroom": "Room",
-            "lectureTime": "2020-06-25T08:41:40",
-            "advisor": "UserName1",
-            "inviteStudents": "UserName2",
-            "availability": "yes",
+            "lectureTimes":[
+                {
+                    "day": "MON",
+                    "fromHour": "15:30",
+                    "toHour": "19:10"
+                },
+                {
+                    "day": "TUE",
+                    "fromHour": "16:30",
+                    "toHour": "18:10"
+                }
+            ],
+            "advisors":[
+                {
+                    "userId": 1,
+                    "role": "VIEWER"
+                },
+                {
+                    "userId": 2,
+                    "role": "FULL_CONTROL"
+                }
+            ],
+            "inviteStudents": [4, 5 , 6],
+            "availability": "PUBLIC",
             "chattingRoom": "yes",
             "introduction": "intro...",
             "objectives": "object...",
             "learningMethod": "online",
             "gradingMethod": "online",
-            "excerciseByweek": "1",
+            "excerciseByWeek": "1",
+            "addingExcercise": "abcxyz",
             "numberWeek": 2,
-            "syllabus": "abcxyz"
+            "color": "#FF0000FF",
+            "syllabus": [
+                {
+                    "week": 1,
+                    "topic": "topic 1",
+                    "content": "abcxyz"
+                },
+                {
+                    "week": 2,
+                    "topic": "topic 2",
+                    "content": "abcxyz"
+                }
+            ]
         }
 
 + Response 200
 
         {
-            "id": 1,
+            "id": 70,
             "name": "class name",
+            "nameEng": "class name english",
+            "userId": 1,
             "professorName": "Hong Kim Dong Prof",
+            "faculty": "abcxyz",
             "code": "123A",
             "semester": "0000year",
-            "classificationNumber": "123",
+            "classIficationNumber": "123456",
             "courseClassification": "123",
             "creadits": 1000,
             "maximumStudent": 20,
             "classroom": "Room",
-            "lectureTime": "2020-06-25T08:41:40",
-            "advisor": "UserName1",
-            "inviteStudents": "UserName2",
-            "availability": "yes",
+            "lectureTimes": [
+                {
+                    "id": 41,
+                    "classId": 70,
+                    "day": "MON",
+                    "fromHour": "15:30",
+                    "toHour": "19:10",
+                    "createdDate": "2020-08-31T02:00:38",
+                    "updateDate": "2020-08-31T02:00:38"
+                },
+                {
+                    "id": 42,
+                    "classId": 70,
+                    "day": "TUE",
+                    "fromHour": "16:30",
+                    "toHour": "18:10",
+                    "createdDate": "2020-08-31T02:00:39",
+                    "updateDate": "2020-08-31T02:00:39"
+                }
+            ],
+            "inviteStudents": [
+                {
+                    "id": 4,
+                    "name": "Student 1",
+                    "avatar": ""
+                },
+                {
+                    "id": 5,
+                    "name": "Student 2",
+                    "avatar": ""
+                },
+                {
+                    "id": 6,
+                    "name": "Student 3",
+                    "avatar": ""
+                }
+            ],
+            "availability": "PUBLIC",
             "chattingRoom": "yes",
             "introduction": "intro...",
             "objectives": "object...",
             "learningMethod": "online",
             "gradingMethod": "online",
-            "excerciseByweek": "1",
+            "excerciseByWeek": "1",
+            "addingExcercise": "abcxyz",
             "numberWeek": 2,
-            "syllabus": "abcxyz"
-            "createdDate": "2020-07-30T12:32:27",
-            "updateDate": "2020-07-30T12:32:27"
+            "syllabus": [
+                {
+                    "id": 96,
+                    "classId": 70,
+                    "week": 1,
+                    "topic": "topic 1",
+                    "content": "abcxyz",
+                    "createdDate": "2020-08-31T02:00:39",
+                    "updateDate": "2020-08-31T02:00:39"
+                },
+                {
+                    "id": 97,
+                    "classId": 70,
+                    "week": 2,
+                    "topic": "topic 2",
+                    "content": "abcxyz",
+                    "createdDate": "2020-08-31T02:00:39",
+                    "updateDate": "2020-08-31T02:00:39"
+                }
+            ],
+            "color": "#FF0000FF",
+            "createdDate": "2020-08-27T01:53:00",
+            "updateDate": "2020-08-31T02:00:37"
         }
         
 + Response 400 (application/json)
