@@ -2807,6 +2807,65 @@ Get list student quizes submit
             "message":"Cannot execute query!",
         }
         
+### Get detail quiz check [GET /api/quizes/detail/quizcheck/{userId}/{quizId}]    
+Get detail quiz check
+        
++ Response 200
+
+        {
+            "quiz": {
+                "id": 1,
+                "week": 1,
+                "title": "quizs name dfggfg",
+                "description": "Description",
+                "classId": 1,
+                "totalScore": 100,
+                "dueDate": "2020-06-25T01:41:40",
+                "questions": "169,170",
+                "createdDate": "2020-06-26T04:40:13",
+                "updateDate": "2020-06-26T04:40:17"
+            },
+            "quizesSubmit": [
+                {
+                    "userId": 4,
+                    "id": 169,
+                    "answers": "abcxyz,abcxyz",
+                    "question": "What are you doing?",
+                    "answer": "abcxyz",
+                    "type": "MULTIPLE"
+                },
+                {
+                    "userId": 4,
+                    "id": 170,
+                    "answers": null,
+                    "question": "What are you doing?",
+                    "answer": "I dont know",
+                    "type": "RESPONSIVE"
+                }
+            ]
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group Discussions
 ### Create Discussion [POST /api/discussions/create/{classId}]    
 Create Discussion
