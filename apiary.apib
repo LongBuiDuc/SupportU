@@ -2764,6 +2764,49 @@ Get all quizes Comment
             "message":"Cannot execute query!",
         }
         
+### Get list student Quizes submit [GET /api/quizes/studentlist/quizessubmit/{quizId}]    
+Get list student quizes submit
+        
++ Response 200
+
+        [
+            {
+                "id": 4,
+                "name": "Student 1",
+                "idNumber": 4,
+                "avatar": "",
+                "submit": true
+            },
+            {
+                "id": 5,
+                "name": "Student 2",
+                "idNumber": 5,
+                "avatar": "",
+                "submit": false
+            }
+        ]
+        
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group Discussions
 ### Create Discussion [POST /api/discussions/create/{classId}]    
 Create Discussion
