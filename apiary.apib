@@ -3065,6 +3065,83 @@ Create Discussion
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Edit Discussion [PUT /api/discussions/edit/{discusstionId}]    
+Edit Discussion
+
++ Request (application/json)
+
+        {
+            "title": "discussion name",
+            "description": "description",
+            "week": 1,
+            "totalScore": 100,
+            "dueDate": "2020-06-25T08:41:40",
+            "topics": [
+                {
+                    "topicName": "mutiple",
+                    "score": 100
+                },
+                {
+                    "topicName": "mutiple",
+                    "score": 100
+                }
+            ]
+        } 
+
++ Response 200
+
+        {
+            "id": 146,
+            "week": 1,
+            "title": "discussion name",
+            "description": "description",
+            "classId": 2,
+            "totalScore": 100,
+            "dueDate": "2020-06-25T08:41:40",
+            "topics": [
+                {
+                    "id": 77,
+                    "topicName": "mutiple",
+                    "score": 100,
+                    "discussionId": 146,
+                    "createdDate": "2020-07-30T12:32:27",
+                    "updateDate": "2020-07-30T12:32:27"
+                },
+                {
+                    "id": 78,
+                    "topicName": "mutiple",
+                    "score": 100,
+                    "discussionId": 146,
+                    "createdDate": "2020-07-30T12:32:27",
+                    "updateDate": "2020-07-30T12:32:27"
+                }
+            ],
+            "createdDate": "2020-07-30T12:32:27",
+            "updateDate": "2020-07-30T12:32:27"
+        }
+
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+
 ## Group Materials
 ### Create Materials [POST /api/classmaterials/create/{classId}] 
 Create Materials
