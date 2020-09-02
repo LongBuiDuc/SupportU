@@ -2204,28 +2204,42 @@ Create assignment comment
             "message":"Cannot execute query!",
         }
         
-### Get All Assignment Commnet [POST /api/AssignmentsComments/?page=]    
-Get all assignment comment
+### Get All Assignment Commnets [GET /api/AssignmentsComments/?page=]    
+Get all assignment comments
 
 
 + Response 200
 
         [
             {
-                "id": 1,
-                "assignmentId": 1,
-                "userId": 1,
-                "message": "Hello",
-                "createdDate": null,
-                "updateDate": null
+                "classId": 1,
+                "name": "Class name 1",
+                "nameEnglish": "Class name 1",
+                "user": {
+                    "id": 1,
+                    "name": "Professor 1",
+                    "idNumber": 1,
+                    "avatar": "http://18.162.141.53/api.supportu/1597386001285_2___1597386001284___13244753_1382109491805277_4936278203817120154_n.jpg",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "writtenTime": "2020-09-02T02:37:01",
+                "message": "Hello"
             },
             {
-                "id": 2,
-                "assignmentId": 1,
-                "userId": 1,
-                "message": "Who I am",
-                "createdDate": "2020-08-29T20:34:04",
-                "updateDate": "2020-08-29T20:34:04"
+                "classId": 1,
+                "name": "Class name 1",
+                "nameEnglish": "Class name 1",
+                "user": {
+                    "id": 1,
+                    "name": "Professor 1",
+                    "idNumber": 1,
+                    "avatar": "http://18.162.141.53/api.supportu/1597386001285_2___1597386001284___13244753_1382109491805277_4936278203817120154_n.jpg",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "writtenTime": "2020-08-29T20:34:04",
+                "message": "Who I am?"
             }
         ]
         
