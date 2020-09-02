@@ -3208,14 +3208,8 @@ Get detail attendance quiz
             "message":"Cannot execute query!",
         }
         
-### Get student list of attendance quiz confirm [GET /api/attendances/studentlist/attendancequizconfirm/{classId}{?type}]    
+### Get student list of attendance quiz confirm [GET /api/attendances/studentlist/attendancequizconfirm/{classId}]    
 Get detail student list of attendance quiz confirm
-
-type: NAME / STATUS
-
-+ Parameters
-    + type -  A query variable
-    
 + Response 200
 
         [
@@ -3348,8 +3342,14 @@ Post confirm of attendance quiz
             "message":"Cannot execute query!",
         }
         
-### Get student list of attendance quiz modify [GET /api/attendances/studentlist/attendancequizmodify/{attendanceId}]    
+### Get student list of attendance quiz modify [GET /api/attendances/studentlist/attendancequizmodify/{attendanceId}{?type}]    
 Get detail student list of attendance quiz modify
+
+type: NAME / STATUS
+
++ Parameters
+    + type -  A query variable
+
 + Response 200
 
         [
