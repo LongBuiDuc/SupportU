@@ -2212,6 +2212,7 @@ Get all assignment comments
 
         [
             {
+                "id": 1,
                 "classId": 1,
                 "name": "Class name 1",
                 "nameEnglish": "Class name 1",
@@ -2227,6 +2228,7 @@ Get all assignment comments
                 "message": "Hello"
             },
             {
+                "id": 1,
                 "classId": 1,
                 "name": "Class name 1",
                 "nameEnglish": "Class name 1",
@@ -2760,6 +2762,7 @@ Get all quizes Comment
 
         [
            {
+                "id": 1,
                 "classId": 1,
                 "name": "Class name 1",
                 "nameEnglish": "Class name 1",
@@ -2775,6 +2778,7 @@ Get all quizes Comment
                 "message": "sdfkdfwfwo w oiwj "
             },
             {
+                "id": 1,
                 "classId": 1,
                 "name": "Class name 1",
                 "nameEnglish": "Class name 1",
@@ -3200,6 +3204,135 @@ Detail Discussion
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Create Discussion comments [POST /api/discussions/create/{discusstionId}]    
+Create Discussion comments
+
++ Response 200
+
+        {
+            "id": 4,
+            "discussionId": 1,
+            "userId": 4,
+            "message": "good morning",
+            "createdDate": "2020-09-03T03:53:45",
+            "updateDate": "2020-09-03T03:53:45"
+        }
+
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Get all Discussion comments [GET /api/DiscussionComments/{discusstionId}]    
+Get all Discussion comments
+
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "classId": 1,
+                "name": "Class name 1",
+                "nameEnglish": "Class name 1",
+                "user": {
+                    "id": 4,
+                    "name": "Student 1",
+                    "idNumber": 4,
+                    "avatar": "",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "writtenTime": "2020-09-03T03:53:45",
+                "message": "good morning"
+            },
+            {
+                "id": 1,
+                "classId": 1,
+                "name": "Class name 1",
+                "nameEnglish": "Class name 1",
+                "user": {
+                    "id": 4,
+                    "name": "Student 1",
+                    "idNumber": 4,
+                    "avatar": "",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "writtenTime": "2020-09-03T03:52:27",
+                "message": "good morning"
+            },
+            {
+                "id": 1,
+                "classId": 1,
+                "name": "Class name 1",
+                "nameEnglish": "Class name 1",
+                "user": {
+                    "id": 4,
+                    "name": "Student 1",
+                    "idNumber": 4,
+                    "avatar": "",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "writtenTime": "2020-09-03T03:51:51",
+                "message": "good morning"
+            },
+            {
+                "id": 1,
+                "classId": 1,
+                "name": "Class name 1",
+                "nameEnglish": "Class name 1",
+                "user": {
+                    "id": 1,
+                    "name": "Professor 1",
+                    "idNumber": 1,
+                    "avatar": "http://18.162.141.53/api.supportu/1597386001285_2___1597386001284___13244753_1382109491805277_4936278203817120154_n.jpg",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "writtenTime": "2020-09-02T11:52:59",
+                "message": "cvbdbd"
+            }
+        ]
+
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+
 
 ## Group Materials
 ### Create Materials [POST /api/classmaterials/create/{classId}] 
