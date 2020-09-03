@@ -3302,6 +3302,50 @@ Get all Discussion comments
             "message":"Cannot execute query!",
         }
 
+### Get all My Discussion [GET /api/discussions/mydiscussion]    
+Get all my discussion
+
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "discussion": {
+                    "id": 1,
+                    "title": "discussion 1"
+                },
+                "createdDate": "2020-09-02T11:52:59"
+            },
+            {
+                "id": 3,
+                "discussion": {
+                    "id": 2,
+                    "title": "discussion 2"
+                },
+                "createdDate": "2020-09-03T03:52:27"
+            }
+        ]
+
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 
 ## Group Materials
 ### Create Materials [POST /api/classmaterials/create/{classId}] 
