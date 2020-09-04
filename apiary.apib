@@ -2106,7 +2106,7 @@ Edit assignment
             "message":"Cannot execute query!",
         }
         
-### Create Assignment Submit for student [POST /api/AssignmentsSubmits/create/{assignmentId}]    
+### Create Assignment Submit for student [POST /api/assignmentssubmits/create/{assignmentId}]    
 Create assignment submit for student
 
 + Request (application/json)
@@ -2163,7 +2163,7 @@ Create assignment submit for student
             "message":"Cannot execute query!",
         }
 
-### Create Assignment Commnet [POST /api/AssignmentsComments/create/{assignmentId}]    
+### Create Assignment Commnet [POST /api/assignmentscomments/create/{assignmentId}]    
 Create assignment comment
 
 + Request (application/json)
@@ -2206,7 +2206,7 @@ Create assignment comment
             "message":"Cannot execute query!",
         }
         
-### Get All Assignment Commnets [GET /api/AssignmentsComments/{assignmentId}?page=]    
+### Get All Assignment Commnets [GET /api/assignmentscomments/{assignmentId}?page=]    
 Get all assignment comments
 
 
@@ -2262,7 +2262,7 @@ Get all assignment comments
             "message":"Cannot execute query!",
         }
         
-### Get List Student Assignment Submit [GET /api/Assignments/studentlist/assignmentsubmit/{assignmentId}{?type}]    
+### Get List Student Assignment Submit [GET /api/assignments/studentlist/assignmentsubmit/{assignmentId}{?type}]    
 Get assignment confirm
 type: NAME / STATUS
 
@@ -2334,7 +2334,7 @@ type: NAME / STATUS
             "message":"Cannot execute query!",
         }
         
-### Input Score Assignment submit [PUT /api/Assignments/inputscore/{assignmentId}]    
+### Input Score Assignment submit [PUT /api/assignments/inputscore/{assignmentId}]    
 Enter score assignment submit
 
 + Request (application/json)
@@ -2554,7 +2554,7 @@ Edit quizes
             "message":"Cannot execute query!",
         }
         
-### Create Quizes Submit [POST /api/QuizesSubmits/create/{quizId}]    
+### Create Quizes Submit [POST /api/quizessubmits/create/{quizId}]    
 Create quizes submit
 
 + Request (application/json)
@@ -2937,7 +2937,7 @@ Get detail quiz check
             "message":"Cannot execute query!",
         }
 
-### Input Score Quizes [PUT /api/Quizes/inputscore/{quizId}]    
+### Input Score Quizes [PUT /api/quizes/inputscore/{quizId}]    
 Enter score assignment submit
 
 + Request (application/json)
@@ -3234,7 +3234,7 @@ Create Discussion comments
             "message":"Cannot execute query!",
         }
         
-### Get all Discussion comments [GET /api/DiscussionComments/{discusstionId}]    
+### Get all Discussion comments [GET /api/discussioncomments/{discusstionId}]    
 Get all Discussion comments
 
 + Response 200
@@ -3389,6 +3389,56 @@ Get List Student Discussion Commented
                     "updateDate": null
                 },
                 "submit": true
+            }
+        ]
+
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Get Discussion History [GET /api/discussioncomments/history/{userId}/{discussionId}{?page}]    
+Get List Student Discussion Commented
+
++ Parameters
+    + page -  A query variable
+
++ Response 200
+
+        [
+            {
+                "id": 2,
+                "discussion": {
+                    "id": 1,
+                    "title": "discussion 1"
+                },
+                "message": "good morning",
+                "createdDate": "2020-09-03T03:51:51"
+            },
+            {
+                "id": 1,
+                "discussion": {
+                    "id": 1,
+                    "title": "discussion 1"
+                },
+                "message": "cvbdbd",
+                "createdDate": "2020-09-02T11:52:59"
             }
         ]
 
@@ -4052,7 +4102,7 @@ alignment: INCOMINGSCHEDULE / RECENTREGISTRAION / CLASSNAME
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
-### Edit User Settings [PUT /api/UserSettings/edit]    
+### Edit User Settings [PUT /api/usersettings/edit]    
 Edit User Settings
 
 alignment: INCOMINGSCHEDULE / RECENTREGISTRAION / CLASSNAME
@@ -4100,7 +4150,7 @@ alignment: INCOMINGSCHEDULE / RECENTREGISTRAION / CLASSNAME
             "message":"Cannot execute query!",
         }
         
-### Get User Settings [GET /api/UserSettings/detail]    
+### Get User Settings [GET /api/usersettings/detail]    
 Class Notice Settings
 
 + Response 200
@@ -4134,7 +4184,7 @@ Class Notice Settings
             "message":"Cannot execute query!",
         }
 
-### Edit Class Notice Settings [POST /api/UserSettings/classnotice]    
+### Edit Class Notice Settings [POST /api/usersettings/classnotice]    
 Class Notice Settings
 + Request (application/json)
 
@@ -4184,7 +4234,7 @@ Class Notice Settings
             "message":"Cannot execute query!",
         }
         
-### Get Class Notice Settings [GET /api/UserSettings/classnotice/detail]    
+### Get Class Notice Settings [GET /api/usersettings/classnotice/detail]    
 Class Notice Settings
 
 + Response 200
