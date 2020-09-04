@@ -3587,19 +3587,23 @@ Get Detail Materials
 + Response 200
 
         {
-            "id": 38,
-            "title": "title",
-            "description": "Description",
-            "classId": 2,
-            "week": 5,
-            "format": "REFERENCE_MATERIAL",
-            "attachedFile": [
-                "http://file1.excel",
-                "http:file2.png"
-            ],
-            "dueDate": null,
-            "createdDate": "2020-08-10T02:07:21",
-            "updateDate": "2020-08-10T02:07:21"
+            "classMaterialsDTO": {
+                "id": 38,
+                "title": "title",
+                "description": "Description",
+                "classId": 2,
+                "week": 5,
+                "format": "REFERENCE_MATERIAL",
+                "duration": 200,
+                "attachedFile": [
+                    "http://file1.excel",
+                    "http:file2.png"
+                ],
+                "dueDate": null,
+                "createdDate": "2020-08-10T02:07:21",
+                "updateDate": "2020-08-10T02:07:21"
+            },
+            "comments": 0
         }
 
 + Response 400 (application/json)
