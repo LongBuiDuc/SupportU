@@ -3346,6 +3346,72 @@ Get all my discussion
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get List Student Discussion Comment [GET /api/discussions/studentlist/discussioncomment/{discussionId}]    
+Get List Student Discussion
+
+
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "user": {
+                    "id": 4,
+                    "name": "Student 1",
+                    "idNumber": 654321,
+                    "avatar": "",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "submit": true
+            },
+            {
+                "id": 1,
+                "user": {
+                    "id": 29,
+                    "name": "user 10",
+                    "idNumber": 1,
+                    "avatar": "",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "submit": false
+            },
+            {
+                "id": 1,
+                "user": {
+                    "id": 1,
+                    "name": "Professor 1",
+                    "idNumber": 123456,
+                    "avatar": "http://18.162.141.53/api.supportu/1597386001285_2___1597386001284___13244753_1382109491805277_4936278203817120154_n.jpg",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "submit": true
+            }
+        ]
+
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 
 ## Group Materials
 ### Create Materials [POST /api/classmaterials/create/{classId}] 
