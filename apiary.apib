@@ -3555,6 +3555,48 @@ Create Materials
             "message":"Cannot execute query!",
         }
         
+### Get Detail Materials [POST /api/classmaterials/detail/{materialId}] 
+Get Detail Materials
+        
++ Response 200
+
+        {
+            "id": 38,
+            "title": "title",
+            "description": "Description",
+            "classId": 2,
+            "week": 5,
+            "format": "REFERENCE_MATERIAL",
+            "attachedFile": [
+                "http://file1.excel",
+                "http:file2.png"
+            ],
+            "dueDate": null,
+            "createdDate": "2020-08-10T02:07:21",
+            "updateDate": "2020-08-10T02:07:21"
+        }
+
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group Attendances
 ### Create Attendance [POST /api/attendances/create/{classId}]    
 Create Attendance
