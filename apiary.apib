@@ -4437,6 +4437,102 @@ Get detail lives
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Create lives comments [POST /api/livescomments/create/{liveId}]    
+Create lives comment
++ Request (application/json)
+
+        {
+               
+            "message": "hello"
+        }
+        
++ Response 200
+
+        {
+            "id": 1,
+            "liveId": 1,
+            "userId": 1,
+            "message": "hello",
+            "createdDate": "2020-09-05T08:38:22",
+            "updateDate": "2020-09-05T08:38:22"
+        }
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Get all lives comments [GET /api/LivesComments]    
+Get all lives comments
+        
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "user": {
+                    "id": 1,
+                    "name": "Professor 1",
+                    "idNumber": 123456,
+                    "avatar": "http://18.162.141.53/api.supportu/1597386001285_2___1597386001284___13244753_1382109491805277_4936278203817120154_n.jpg",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "message": "hello",
+                "createdDate": "2020-09-05T01:38:22"
+            },
+            {
+                "id": 2,
+                "user": {
+                    "id": 1,
+                    "name": "Professor 1",
+                    "idNumber": 123456,
+                    "avatar": "http://18.162.141.53/api.supportu/1597386001285_2___1597386001284___13244753_1382109491805277_4936278203817120154_n.jpg",
+                    "createdDate": null,
+                    "updateDate": null
+                },
+                "message": "hello",
+                "createdDate": "2020-09-05T01:38:22"
+            }
+        ]
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 
 ## Group Settings
 ### User Settings [POST /api/UserSettings/create]    
