@@ -3779,6 +3779,47 @@ Get Materials Commments
             "message":"Cannot execute query!",
         }
         
+### Create Materials submit [POST /api/classmaterialssubmits/create/{materialId}] 
+Create Materials submit
+    
++ Request (application/json)
+
+        {
+             "progress": 50
+        }
+        
++ Response 200
+
+        {
+            "id": 1,
+            "materialId": 1,
+            "userId": 1,
+            "progress": 50,
+            "createdDate": "2020-09-05T06:42:17",
+            "updateDate": "2020-09-05T06:42:17"
+        }
+
++ Response 400 (application/json)
+
+        {
+            "code": "DB_REQUIRED",
+            "message":"Data error"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group Attendances
 ### Create Attendance [POST /api/attendances/create/{classId}]    
 Create Attendance
