@@ -4361,7 +4361,7 @@ Create Lives
             "message":"Cannot execute query!",
         }
         
-### Edit lives [PUT /api/lives/{liveId}]    
+### Edit lives [PUT /api/lives/edit/{liveId}]    
 Edit lives
 + Request (application/json)
 
@@ -4397,6 +4397,47 @@ Edit lives
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get detail lives [GET /api/lives/detail/{liveId}]    
+Get detail lives
+        
++ Response 200
+
+        {
+           "lives": {
+                "id": 1,
+                "classId": 2,
+                "week": 5,
+                "title": "live 1",
+                "description": "Description",
+                "url": "https://localhost:44369",
+                "createdDate": "2020-08-10T02:37:57",
+                "updateDate": "2020-09-05T01:25:19"
+            },
+            "comments": 1
+        }
+        
++ Response 400 (application/json)
+
+        {
+          "code": "BAD_REQUEST_ERROR",
+          "message": "Bad Request!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+
 ## Group Settings
 ### User Settings [POST /api/UserSettings/create]    
 Create User Settings
