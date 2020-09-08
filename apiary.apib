@@ -382,7 +382,6 @@ Update Users infomation.
             "gender": "male",
             "identity": "Student",
             "degree": "Bachelor",
-            "school": "Yankee University",
             "idNumber": 1,
             "nationality": "Republic of Korea",
             "department": "The national language",
@@ -390,14 +389,42 @@ Update Users infomation.
             "consultation": "abcxyz",
             "address": "Sejong Road",
             "detailAddress": "000 Sejong Road, Junggu, Seoul",
-            "schoolEmail": "university@email.net"
+            "schoolEmail": "university@email.net",
+            "department": null,
+            "nationality": "Republic of Korea",
+            "motherTongue": "English",
+            "consultation": "e",
         }
     
 + Response 200 (application/json)
 
         {
-          "code": "UPDATE_SUCCESS",
-          "message": "Request confirmed!"
+            "id": 4,
+            "email": "student1@gmail.com",
+            "password": "df10ef8509dc176d733d59549e7dbfaf",
+            "name": "long",
+            "avatar": "",
+            "phone": "086365445",
+            "gender": "Female",
+            "identity": "STUDENT",
+            "degree": "BACHELOR",
+            "school": {
+                "id": 3,
+                "name": "Seoul Open University",
+                "createdDate": "2020-06-19T03:30:37",
+                "updateDate": "2020-06-19T03:30:40"
+            },
+            "idNumber": 654321,
+            "address": "ha noi",
+            "detailAddress": null,
+            "schoolEmail": "university@email.net",
+            "department": null,
+            "nationality": "Republic of Korea",
+            "motherTongue": "English",
+            "consultation": "e",
+            "createdDate": "2020-06-02T06:17:10",
+            "updateDate": "2020-09-08T06:48:09",
+            "fcmToken": "c1TDG0TvRXmkeAOy1VEJ8y:APA91bGkQo5Y7ttdDXwmKsVmq1Wbpxrwc9X_ub1QJKQ2Z7Mc2bQH0dG-hlvqdXCFUJdTk6DBBXhqCd35Pr2X-8WUSnbji4fMu_Ir0dBTs4C6EKkIzw8CBaUgfqgP63b8tkJZUzfE0RF7"
         }
         
 + Response 400 (application/json)
