@@ -526,6 +526,72 @@ Upload File.
           "message": "Access token is invalid!"
         }
         
+### Get academic information [GET /api/academic/information/{schoolId}]
+Academic Information.
+
++ Response 200 (application/json)
+
+        
+        {
+            "totalGrades": 600,
+            "accquiredGrade": 0,
+            "completeCourses": 3,
+            "gpa": 0,
+            "percentage": 0,
+            "semesters": [
+                {
+                    "semester": "2020/1",
+                    "schoolYear": 1,
+                    "numberSubjects": 3,
+                    "completeCourses": 0,
+                    "accquiredGrade": 0,
+                    "gpa": 0,
+                    "percentage": 0
+                },
+                {
+                    "semester": "2020/2",
+                    "schoolYear": 1,
+                    "numberSubjects": 0,
+                    "completeCourses": 0,
+                    "accquiredGrade": 0,
+                    "gpa": 0,
+                    "percentage": 0
+                }
+            ]
+        }
+        
+        
++ Response 400 (application/json)
+
+        {
+            "code":"PASSWORD_WRONG",
+            "message":"Current password is invalid!",
+        }
+        
+        {
+            "code":"PASSWORD_NOT_MATCH",
+            "message":"Current password is invalid!",
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
+        {
+          "code": "AUTH_ERROR",
+          "message": "Access token is invalid!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group Search
 
 ### Search Users [GET /api/search/users{?keyword,page,identity}]
