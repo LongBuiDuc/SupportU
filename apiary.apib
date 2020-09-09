@@ -5069,6 +5069,52 @@ Get detail calendar
             "message":"error message"
         }
         
+## Group Notices
+### Get All Notice [GET /api/Notices/]
+All Notice
+
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "title": "title 1",
+                "content": "Your answers to the questions will be posted ",
+                "createdDate": "2020-09-09T06:26:11",
+                "updateDate": "2020-09-09T06:26:14"
+            },
+            {
+                "id": 2,
+                "title": "title 1",
+                "content": "Your answers to the questions will be posted ",
+                "createdDate": "2020-09-09T06:26:11",
+                "updateDate": "2020-09-09T06:26:14"
+            }
+        ]
+     
++ Response 400 (application/json)
+
+        {
+            "code":"DATA_ERROR",
+            "message":"Data error",
+        }
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+        
+
++ Response 500 (application/json)
+
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"error message"
+        }
+        
 ## Group FCM
 For push notification
 
