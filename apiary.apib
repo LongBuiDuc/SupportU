@@ -1358,6 +1358,68 @@ Post Enroll in classes
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get Classes Information [GET /api/classes/information/{schoolId}]    
+Classes Information
+
++ Response 200
+
+        [
+            {
+                "semester": "2020/1",
+                "classes": [
+                    {
+                        "name": "class name 4",
+                        "nameEnglish": "class name english",
+                        "professorName": "Hocng Kim Dong Prof",
+                        "code": "123A"
+                    },
+                    {
+                        "name": "class name 6",
+                        "nameEnglish": "class name english",
+                        "professorName": "Hoeng Kim Dong Prof",
+                        "code": "abcd"
+                    }
+                ]
+            },
+            {
+                "semester": "2020/2",
+                "classes": [
+                    {
+                        "name": "dfgdfg",
+                        "nameEnglish": "fgfg",
+                        "professorName": "gf",
+                        "code": "gg"
+                    },
+                    {
+                        "name": "test real 1",
+                        "nameEnglish": "45t",
+                        "professorName": "th",
+                        "code": "hhu"
+                    },
+                    {
+                        "name": "test real 2",
+                        "nameEnglish": "aa",
+                        "professorName": "bb",
+                        "code": "dd"
+                    }
+                ]
+            }
+        ]
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+  
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Detail Information of Classes for Student
 ### Get Detail Information of Class [GET /api/classesdetail/detail/{classId}]    
 Get detail informatioin of class
