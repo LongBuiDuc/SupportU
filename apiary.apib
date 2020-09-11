@@ -5337,6 +5337,58 @@ Kick out The User Of Chat Room
             "message":"error message"
         }
         
+### Get Participants Chat Room [GET /api/chatrooms/paricipants/{roomId}]
+Get Participants
+
+
++ Response 200
+
+        [
+            {
+                "id": 36,
+                "name": "Class chat",
+                "user": {
+                    "id": 1,
+                    "name": "Professor 1",
+                    "avatar": "http://18.162.141.53/api.supportu/1597386001285_2___1597386001284___13244753_1382109491805277_4936278203817120154_n.jpg",
+                    "idNumber": 123456
+                }
+            },
+            {
+                "id": 36,
+                "name": "Class chat",
+                "user": {
+                    "id": 5,
+                    "name": "Student2",
+                    "avatar": "",
+                    "idNumber": 1
+                }
+            }
+        ]
+         
++ Response 400 (application/json)
+
+        {
+            "code":"DATA_ERROR",
+            "message":"Data error",
+        }
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+        
+
++ Response 500 (application/json)
+
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"error message"
+        }
+        
 ## Group Notices
 ### Get All Notice [GET /api/Notices/{?page}]
 All Notice
