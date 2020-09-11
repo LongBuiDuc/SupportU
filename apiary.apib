@@ -5298,6 +5298,45 @@ Delete Chat room
             "message":"error message"
         }
         
+### Detele The User of Chat Room [POST /api/chatrooms/kickout/{classId}]
+Kick out The User Of Chat Room
+
++ Request (application/json)
+
+        {
+            "userIds": [1,2]
+        }
+
++ Response 200
+
+        {
+            "code": "DELETE_SUCCESS",
+            "message": "Deleted Successfully!"
+        }
+         
++ Response 400 (application/json)
+
+        {
+            "code":"DATA_ERROR",
+            "message":"Data error",
+        }
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+        
+
++ Response 500 (application/json)
+
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"error message"
+        }
+        
 ## Group Notices
 ### Get All Notice [GET /api/Notices/{?page}]
 All Notice
