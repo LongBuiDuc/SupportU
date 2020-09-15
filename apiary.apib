@@ -93,12 +93,74 @@ Not need authentication
             }
         ]
         
++ Response 401 (application/json)
+
+        {
+            "code":"EMAIL_EXISTED",
+            "message":"The email already exist!",
+        }
+        
+        {
+            "code":"EMAIL_INVALID",
+            "message":"The email is invalid!",
+        }
+        
+        {
+            "code":"PHONENUMBER_EXISTED",
+            "message":"Phone numeber already exist!",
+        }
+        
 + Response 500 (application/json)
 
         {
             "code":"DB_ERROR",
             "message":"Cannot execute query!",
-        }  
+        }
+        
+### Get Schools Of User [GET /api/schools/schoolofuser]
+Get all universities of user
+Not need authentication
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id":1,
+                "name":"Seoul Technolozy University",
+                "createdDate":"2020-07-30T12:32:27",
+                "updateDate":"2020-07-30T12:32:27"
+            },
+            {
+                "id":2,
+                "name":"Seoul Intenational University",
+                "createdDate":"2020-07-30T12:32:27",
+                "updateDate":"2020-07-30T12:32:27"
+            }
+        ]
+
++ Response 401 (application/json)
+
+        {
+            "code":"EMAIL_EXISTED",
+            "message":"The email already exist!",
+        }
+        
+        {
+            "code":"EMAIL_INVALID",
+            "message":"The email is invalid!",
+        }
+        
+        {
+            "code":"PHONENUMBER_EXISTED",
+            "message":"Phone numeber already exist!",
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }
 
 ## Group Authentication
 ### SignIn [POST /api/authorization/signin]
