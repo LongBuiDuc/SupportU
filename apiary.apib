@@ -5510,6 +5510,62 @@ Get Setting Chat Room
             "code":"INTERNAL_SERVER_ERROR",
             "message":"error message"
         }
+
+## Group Notification
+### Get All Notifications [GET /api/Notification/{?page}]
+All Notifications
++ Parameters
+    + page - A querry variable
+
++ Response 200
+
+        [
+            {
+                "id": 1,
+                "eventType": "",
+                "classId": "title 1",
+                "submitId": "Your answers to the questions will be posted ",
+                "title": "Morning",
+                "content": "Good morning"
+                "fromUserId": 1,
+                "createdDate": "2020-06-19T03:30:05",
+                "updateDate": "2020-06-19T03:30:09"
+            },
+            {
+               "id": 2,
+                "eventType": "",
+                "classId": "title 1",
+                "submitId": "Your answers to the questions will be posted ",
+                "title": "Morning",
+                "content": "Good morning"
+                "fromUserId": 1,
+                "createdDate": "2020-06-19T03:30:05",
+                "updateDate": "2020-06-19T03:30:09"
+            }
+        ]
+     
++ Response 400 (application/json)
+
+        {
+            "code":"DATA_ERROR",
+            "message":"Data error",
+        }
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+        
+
++ Response 500 (application/json)
+
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"error message"
+        }
         
 ## Group Notices
 ### Get All Notice [GET /api/Notices/{?page}]
