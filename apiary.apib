@@ -5666,17 +5666,29 @@ Not need authentication
 + Response 200 (application/json)
 
         [
-            {
-                "id":1,
-                "name":"Seoul Technolozy University",
-                "createdDate":"2020-07-30T12:32:27",
-                "updateDate":"2020-07-30T12:32:27"
+           {
+                "user": {
+                    "id": 1,
+                    "name": "Professor 1",
+                    "idNumber": 1234567
+                },
+                "school": {
+                    "id": 1,
+                    "name": "Seoul Technolozy University"
+                },
+                "currentSchool": false
             },
             {
-                "id":2,
-                "name":"Seoul Intenational University",
-                "createdDate":"2020-07-30T12:32:27",
-                "updateDate":"2020-07-30T12:32:27"
+                "user": {
+                    "id": 1,
+                    "name": "Professor 1",
+                    "idNumber": 1234567
+                },
+                "school": {
+                    "id": 2,
+                    "name": "Seoul Intenational University"
+                },
+                "currentSchool": true
             }
         ]
 
