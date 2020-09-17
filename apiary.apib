@@ -5607,6 +5607,38 @@ Delete all Notification of User
             "message":"error message"
         }
         
+### Get All Notifications UnRead [DELETE /api/notifications/unread/]
+Count Notifications UnRead
+
++ Response 200
+
+        {
+            "notificationsUnread": 12
+        }
+                 
++ Response 400 (application/json)
+
+        {
+            "code":"DATA_ERROR",
+            "message":"Data error",
+        }
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+        
+
++ Response 500 (application/json)
+
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"error message"
+        }
+        
 ## Group Notices
 ### Get All Notice [GET /api/Notices/{?page}]
 All Notice
