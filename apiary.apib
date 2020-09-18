@@ -5689,6 +5689,53 @@ All Notice
             "message":"error message"
         }
         
+## Group Location
+### Post User Locatioin [POST /api/userlocations/]
+Create user location
+
++ Request (application/json)
+
+        {
+            "lat": 26,
+            "lng": 9.4,
+            "address": "sfsfdfjksl"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "userId": 1,
+            "lat": 26,
+            "lng": 9.4,
+            "address": "sfsfdfjksl",
+            "createdDate": null,
+            "updateDate": "2020-09-18T07:49:13"
+        }
+                 
++ Response 400 (application/json)
+
+        {
+            "code":"DATA_ERROR",
+            "message":"Data error",
+        }
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+        
+
++ Response 500 (application/json)
+
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"error message"
+        }
+        
 ## Group Schools
 ### Get All Schools [GET /api/schools/{?page}]
 Get all universities.
