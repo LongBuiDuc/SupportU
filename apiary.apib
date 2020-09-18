@@ -5690,7 +5690,7 @@ All Notice
         }
         
 ## Group Location
-### Post User Locatioin [POST /api/userlocations/]
+### Post User Location [POST /api/userlocations/]
 Create user location
 
 + Request (application/json)
@@ -5727,6 +5727,40 @@ Create user location
             "message":"Invalid access token! Authentication is required!"
         }
         
+
++ Response 500 (application/json)
+
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"error message"
+        }
+        
+### Get Location Setting [POST /api/locationsettings/time]
+Get location setting
+
++ Response 200
+
+        {
+            "id": 1,
+            "time": 30,
+            "createdDate": "2020-09-18T03:18:16",
+            "updateDate": "2020-09-18T03:18:14"
+        }
+                 
++ Response 400 (application/json)
+
+        {
+            "code":"DATA_ERROR",
+            "message":"Data error",
+        }
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
 
 + Response 500 (application/json)
 
