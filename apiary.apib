@@ -275,6 +275,23 @@ Forgot password.
           "message": "error message"
         }
         
+### Logout [POST /api/authorization/logout]
+Logout
+    
++ Response 200 (application/json)
+
+        {
+            "code": "LOGOUT",
+            "message": "Logout successful"
+        }
+        
++ Response 500 (application/json)
+
+        {
+          "code": "INTERNAL_SERVER_ERROR",
+          "message": "error message"
+        }
+        
 ## Group Users
 ### Get My Profile [GET /api/users/myprofile]
 Get my profile.
