@@ -3184,6 +3184,30 @@ Enter score assignment submit
             "message":"Cannot execute query!",
         }
         
+### Delete Quizes [DELETE /api/quizes/{quizId}]    
+Delete quizes
+
++ Response 200
+
+        {
+            "code": "DELETE_SUCCESS",
+            "message": "Deleted Successfully!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group Discussions
 ### Create Discussion [POST /api/discussions/create/{classId}]    
 Create Discussion
