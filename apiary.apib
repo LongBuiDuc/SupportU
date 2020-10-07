@@ -3753,6 +3753,30 @@ Input scores discussion
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Delete Discussions [DELETE /api/discussions/{discussionId}]    
+Delete Discussions
+
++ Response 200
+
+        {
+            "code": "DELETE_SUCCESS",
+            "message": "Deleted Successfully!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 
 ## Group Materials
 ### Create Materials [POST /api/classmaterials/create/{classId}] 
@@ -4040,6 +4064,30 @@ Create Materials submit
           "message": "Invalid access token! Authentication is required!"
         }
         
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Delete Materials [DELETE /api/classmaterials/{materialId}]    
+Delete Materials
+
++ Response 200
+
+        {
+            "code": "DELETE_SUCCESS",
+            "message": "Deleted Successfully!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
 + Response 500 (application/json)
 
         {
@@ -4548,6 +4596,31 @@ Get evaluate list of attendance quiz
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+        
+### Delete Attendance [DELETE /api/attendances/{attendanceId}]    
+Delete Attendance
+
++ Response 200
+
+        {
+            "code": "DELETE_SUCCESS",
+            "message": "Deleted Successfully!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Lives
 ### Create Lives [POST /api/Lives/create/{classId}]    
 Create Lives
@@ -4754,6 +4827,30 @@ Get all lives comments
         {
             "code":"AUTH_REQUIRED",
             "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
+### Delete Lives [DELETE /api/lives/{liveId}]    
+Delete Lives
+
++ Response 200
+
+        {
+            "code": "DELETE_SUCCESS",
+            "message": "Deleted Successfully!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
         }
 
 + Response 500 (application/json)
