@@ -992,6 +992,13 @@ Create class
           "message": "Invalid access token! Authentication is required!"
         }
         
++ Response 400 (application/json)
+
+        {
+            "code": "EXCESSCAPACITY",
+            "message": "The number of users has reached the limit"
+        }
+        
 + Response 500 (application/json)
 
         {
@@ -1144,11 +1151,23 @@ Edit class
             "updateDate": "2020-08-31T02:00:37"
         }
         
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
 + Response 400 (application/json)
 
         {
             "code": "DB_REQUIRED",
             "message":"Data error"
+        }
+        
+        {
+            "code": "EXCESSCAPACITY",
+            "message": "The number of users has reached the limit"
         }
         
 + Response 500 (application/json)
