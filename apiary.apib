@@ -2572,6 +2572,32 @@ Enter score assignment submit
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Delete Assignment [DELETE /api/assignments/{assignmentId}]    
+Delete Assignment
+
++ Response 200
+
+        {
+            "code": "DELETE_SUCCESS",
+            "message": "Deleted Successfully!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+
+
 ## Group Quizes
 ### Create Quizes [POST /api/quizes/create/{classId}]    
 Create quizes
