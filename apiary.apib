@@ -1835,23 +1835,28 @@ Get detail score
         }
         
 ### Get Detail Attendance Status [GET /api/classesdetail/detail/attendancestatus/{classId}]    
-Get detail attendance status for studen
+Get detail attendance status for student
 + Response 200
 
         {
             "attendances": [
                 {
-                    "id": 1,
+                    "id": 33,
                     "week": 1,
-                    "status": "Absent"
+                    "status": "ABSENT"
                 },
                 {
-                    "id": 2,
-                    "week": 5,
-                    "status": "Absent"
+                    "id": 1,
+                    "week": 2,
+                    "status": "ATTENDANCE"
+                },
+                {
+                    "id": 0,
+                    "week": 3,
+                    "status": null
                 }
             ],
-            "absent": 2
+            "absent": 1
         }
         
 + Response 401 (application/json)
