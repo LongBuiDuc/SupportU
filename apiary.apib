@@ -4367,6 +4367,31 @@ Get detail attendance quiz
             "message":"Cannot execute query!",
         }
         
+### Get Check Attendance Quiz For Professor [GET /api/classesdetail/staff/check/attendancequiz/{classId}]    
+Get detail attendance quiz
+- true : attendance not exist
+- false : attendance already exist
+
++ Response 200
+
+        {
+            "result": true
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ### Get Student List of Attendance Quiz Confirm [GET /api/attendances/studentlist/attendancequizconfirm/{classId}{?type}]    
 Get detail student list of attendance quiz confirm
 
