@@ -1472,6 +1472,52 @@ Classes Information
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get Classes List Import From Admin [GET /api/classes/list/import]    
+Classes List Import
+
++ Response 200
+
+        [
+            {
+                "id": 146,
+                "name": "aaa",
+                "nameEnglish": "a",
+                "userId": 3,
+                "schoolId": 10,
+                "professorName": "a",
+                "faculty": "Department abc",
+                "code": "kkkkk",
+                "semester": "2020 2",
+                "semesterStartDate": "0001-01-01T00:00:00"
+            },
+            {
+                "id": 147,
+                "name": "aaa",
+                "nameEnglish": "a",
+                "userId": 3,
+                "schoolId": 10,
+                "professorName": "a",
+                "faculty": "Department abc",
+                "code": "kkkkk",
+                "semester": "2020 2",
+                "semesterStartDate": "0001-01-01T00:00:00"
+            }
+        ]
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+  
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Detail Information of Classes for Student
 ### Get Detail Information of Class [GET /api/classesdetail/detail/{classId}]    
 Get detail informatioin of class
