@@ -1600,101 +1600,87 @@ Get course information
 
 + Response 200
 
-        {
-           "assignments": [
-                {
-                    "id": 2,
-                    "week": 2,
-                    "title": "assignment name 2"
-                },
-                {
-                    "id": 4,
-                    "week": 3,
-                    "title": "assignment name"
-                },
-                {
-                    "id": 5,
-                    "week": 3,
-                    "title": "assignment name"
-                }
-            ],
-            "discussions": [
-                {
-                    "id": 2,
-                    "week": 1,
-                    "title": "discussion 2"
-                },
-                {
-                    "id": 153,
-                    "week": 1,
-                    "title": "discussion name"
-                },
-                {
-                    "id": 154,
-                    "week": 1,
-                    "title": "discussion name"
-                }
-            ],
-            "classMaterials": [
-                {
-                    "id": 38,
-                    "week": 5,
-                    "title": "title"
-                },
-                {
-                    "id": 43,
-                    "week": 5,
-                    "title": "title"
-                }
-            ],
-             "attendances": [
-                {
-                    "id": 2,
-                    "week": 5,
-                    "title": null
-                },
-                {
-                    "id": 3,
-                    "week": 5,
-                    "title": null
-                },
-                {
-                    "id": 4,
-                    "week": 5,
-                    "title": null
-                }
-            ],
-            "quizes": [
-                {
-                    "id": 2,
-                    "week": 1,
-                    "title": "quiz 2"
-                },
-                {
-                    "id": 113,
-                    "week": 1,
-                    "title": "quizs name"
-                },
-                {
-                    "id": 114,
-                    "week": 1,
-                    "title": "quizs name"
-                }
-            ],
-            "lives": [
-                {
-                    "id": 1,
-                    "week": 5,
-                    "title": "title"
-                },
-                {
-                    "id": 2,
-                    "week": 5,
-                    "title": "title"
-                }
-            ]
-            
-        }
+        [
+            {
+                "week": 1,
+                "courseInformations": [
+                    {
+                        "id": 71,
+                        "week": 1,
+                        "title": "assignment 1",
+                        "type": "ASSIGNMENT"
+                    },
+                    {
+                        "id": 36,
+                        "week": 1,
+                        "title": "live douplicate 5",
+                        "type": "LIVE"
+                    }
+                ]
+            },
+            {
+                "week": 2,
+                "courseInformations": [
+                    {
+                        "id": 157,
+                        "week": 2,
+                        "title": "discussion",
+                        "type": "DISCUSSION"
+                    },
+                    {
+                        "id": 7,
+                        "week": 2,
+                        "title": "live 1",
+                        "type": "LIVE"
+                    }
+                ]
+            },
+            {
+                "week": 3,
+                "courseInformations": [
+                    {
+                        "id": 73,
+                        "week": 3,
+                        "title": "Assignment B",
+                        "type": "ASSIGNMENT"
+                    },
+                    {
+                        "id": 120,
+                        "week": 3,
+                        "title": "quiz 3",
+                        "type": "QUIZ"
+                    }
+                ]
+            },
+            {
+                "week": 4,
+                "courseInformations": [
+                    {
+                        "id": 53,
+                        "week": 4,
+                        "title": null,
+                        "type": "ATTENDANCE_QUIZ"
+                    }
+                ]
+            },
+            {
+                "week": 5,
+                "courseInformations": [
+                    {
+                        "id": 2,
+                        "week": 5,
+                        "title": null,
+                        "type": "ATTENDANCE_QUIZ"
+                    },
+                    {
+                        "id": 54,
+                        "week": 5,
+                        "title": null,
+                        "type": "ATTENDANCE_QUIZ"
+                    }
+                ]
+            }
+        ]
         
 + Response 500 (application/json)
 
