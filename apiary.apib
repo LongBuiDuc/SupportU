@@ -2054,34 +2054,60 @@ Get detail score
 + Response 200
 
         {
-            "assignments": [
-                {
-                    "id": 2,
-                    "title": "abc",
-                    "score": 5
-                },
-                {
-                    "id": 4,
-                    "title": "abc",
-                    "score": 7
-                }
-            ],
-            "discussions": [
-                {
-                    "id": 2,
-                    "title": "abc",
-                    "score": 50
-                }
-            ],
-            "quizes": [
-                {
-                    "id": 2,
-                    "title": "abc",
-                    "score": 30
-                }
-            ],
-
-            "totalscore": 92,
+            "scores": [
+                    {
+                        "week": 1,
+                        "statusScores": [
+                            {
+                                "id": 71,
+                                "title": "assignment 1",
+                                "score": 234,
+                                "week": 1
+                            },
+                            {
+                                "id": 148,
+                                "title": "q4",
+                                "score": 20,
+                                "week": 1
+                            }
+                        ]
+                    },
+                    {
+                        "week": 2,
+                        "statusScores": [
+                            {
+                                "id": 121,
+                                "title": "quiz 2",
+                                "score": 50,
+                                "week": 2
+                            },
+                            {
+                                "id": 157,
+                                "title": "discussion",
+                                "score": 83,
+                                "week": 2
+                            }
+                        ]
+                    },
+                    {
+                        "week": 3,
+                        "statusScores": [
+                            {
+                                "id": 73,
+                                "title": "Assignment B",
+                                "score": 50,
+                                "week": 3
+                            },
+                            {
+                                "id": 120,
+                                "title": "quiz 3",
+                                "score": 80,
+                                "week": 3
+                            }
+                        ]
+                    }
+                ],
+                "totalScore": 619
         }
         
 + Response 401 (application/json)
