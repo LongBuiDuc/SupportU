@@ -1968,50 +1968,71 @@ Get detail duedate status for professor
 + Response 200
 
         {
-            "assignments": [
-                {
-                    "id": 47,
-                    "title": "exercise 2",
-                    "dueDate": "2020-08-06T13:30:00",
-                    "submit": false
-                },
-                {
-                    "id": 63,
-                    "title": "ttt",
-                    "dueDate": "2020-08-04T00:22:15",
-                    "submit": false
-                }
-            ],
-            "discussions": [
-                {
-                    "id": 1,
-                    "title": "discussion name 1",
-                    "dueDate": "2020-08-07T04:44:26",
-                    "submit": false
-                },
-                {
-                    "id": 156,
-                    "title": "ttt",
-                    "dueDate": "2020-08-27T02:55:23",
-                    "submit": true
-                }
-            ],
-            "quizes": [
-                {
-                    "id": 1,
-                    "title": "quiz 1",
-                    "dueDate": "2020-08-21T08:39:24",
-                    "submit": false
-                },
-                {
-                    "id": 104,
-                    "title": "quizs name long test",
-                    "dueDate": "2020-06-25T01:41:40",
-                    "submit": false
-                },
-            ],
-            "submit": 1,
-            "notSubmit": 6
+            "dueDates": [
+                    {
+                        "week": 1,
+                        "dueDateDetails": [
+                            {
+                                "id": 53,
+                                "title": "material1",
+                                "dueDate": "2020-09-25T02:39:38",
+                                "submit": false,
+                                "week": 1
+                            },
+                            {
+                                "id": 148,
+                                "title": "q4",
+                                "dueDate": "2020-10-29T20:11:54",
+                                "submit": true,
+                                "week": 1
+                            }
+                        ]
+                    },
+                    {
+                        "week": 2,
+                        "dueDateDetails": [
+                            {
+                                "id": 121,
+                                "title": "quiz 2",
+                                "dueDate": "2020-10-29T19:29:58",
+                                "submit": true,
+                                "week": 2
+                            },
+                            {
+                                "id": 157,
+                                "title": "discussion",
+                                "dueDate": "2020-10-05T23:15:41",
+                                "submit": false,
+                                "week": 2
+                            }
+                        ]
+                    },
+                    {
+                        "week": 3,
+                        "dueDateDetails": [
+                            {
+                                "id": 73,
+                                "title": "Assignment B",
+                                "dueDate": "2020-09-24T19:30:50",
+                                "submit": false,
+                                "week": 3
+                            },
+                            {
+                                "id": 120,
+                                "title": "quiz 3",
+                                "dueDate": "2020-10-22T20:00:35",
+                                "submit": true,
+                                "week": 3
+                            }
+                        ]
+                    },
+                    {
+                        "week": 4,
+                        "dueDateDetails": []
+                    }
+                ],
+                "submit": 6,
+                "notSubmit": 4
         }
         
 + Response 401 (application/json)
