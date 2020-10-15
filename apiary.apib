@@ -620,6 +620,48 @@ Academic Information.
             "message":"Cannot execute query!",
         }
         
+### Update Consultaion of User [POST /api/users/update/consultaion/{userId}]
+Update Consultaion.
+
++ Request (application/json)
+
+        {
+            "consultation": "hahaha"
+        }
+    
++ Response 200 (application/json)
+
+        {
+            "code": "UPDATE_SUCCESS",
+            "message": "Request confirmed!"
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code": "CANNOTEDIT",
+            "message": "Cannot be edit!"
+        }
+
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
+        {
+          "code": "AUTH_ERROR",
+          "message": "Access token is invalid!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group Search
 
 ### Search Users [GET /api/search/users{?keyword,page,identity}]
