@@ -2281,107 +2281,64 @@ Get detail class student list (45)
             "message":"Cannot execute query!",
         }
 ## Group Courses
-### Create Courses [POST /api/courses/create]    
-Create courses
+### Create Course position [POST /api/courses/position/{classId}]    
+Create Course position
 
 + Request (application/json)
+
+        {
+            "week": 100,
+            "courses":
+            [
+                {
+                    "courseId": 3,
+                    "type": "LIVE",
+                    "position": 1,
+                },
+                {
+                    "courseId": 3,
+                    "type": "ASSIGNMENT",
+                    "position": 1,
+                },
+            ]
+           
+        }
         
-        {
-            "name": "course name",
-            "description": "1"
-        }
-
 + Response 200
 
         {
-            "id": 1,
-            "name": "course name",
-            "description": "1",
-            "userId": 1,
-            "createdDate": "2020-07-30T12:32:27",
-            "updateDate": "2020-07-30T12:32:27"
+            "id": 61,
+            "classId": 8,
+            "userId": 6,
+            "courseId": 3,
+            "type": "LIVE",
+            "position": 1,
+            "week": 100,
+            "createdDate": "2020-08-10T08:55:22",
+            "updateDate": "2020-08-10T08:55:22"
         }
-
-
-### Get My Courses [GET /api/courses]    
-Get all my courses
-
-+ Response 200
-
-        [
-            {
-                "id": 1,
-                "name": "course name",
-                "description": "1",
-                "userId": 1,
-                "createdDate": "2020-07-30T12:32:27",
-                "updateDate": "2020-07-30T12:32:27"
-            },
-            {
-                "id": 2,
-                "name": "Course name 2",
-                "description": "Description 2",
-                "userId": 2,
-                "createdDate": "2020-07-30T12:32:27",
-                "updateDate": "2020-07-30T12:32:27"
-            }
-        ]
         
-### Delete Course [DELETE /api/courses/{id}]    
-Delete my course. Only owner who created course can be delete their course
-
-+ Response 200
++ Response 401 (application/json)
 
         {
-            "code":"DELETE_SUCCESS",
-            "message":"Delete course successfuly"
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
         }
+        
 + Response 400 (application/json)
-        
+
         {
-            "code":"OWER_ERROR",
-            "message":"Can't delete course is not of yourseft created",
+            "code": "DB_REQUIRED",
+            "message":"Data error"
         }
         
-### Edit Course [PUT /api/courses/edit]    
-Edit courses
++ Response 500 (application/json)
 
-+ Request (application/json)
-        
         {
-            "name": "class name",
-            "description": "1"
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
         }
 
-+ Response 200
-
-        {
-            "id": 1,
-            "name": "course name",
-            "description": "1",
-            "userId": 1,
-            "createdDate": "2020-07-30T12:32:27",
-            "updateDate": "2020-07-30T12:32:27"
-        }    
-        
-### Comment Courses [POST /api/courses/comment]    
-Comment a course
-
-+ Request (application/json)
-        
-        {
-            "content": "How long of this course?"
-        }
-
-+ Response 200
-
-        {
-            "id": 1,
-            "content": "How long of this course?",
-            "userId": 1,
-            "createdDate": "2020-07-30T12:32:27",
-            "updateDate": "2020-07-30T12:32:27"
-        }
         
 ## Group Assignments
 ### Create Assignment [POST /api/assignments/create/{classId}]    
