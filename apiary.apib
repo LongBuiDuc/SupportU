@@ -2046,40 +2046,117 @@ Get detail duedate of student
         }
 
 ### Get Detail Score Status [GET /api/classesdetail/detail/student/score/{classId}]    
-Get detail score
+Get detail score status for student
 + Response 200
 
         {
-            "assignments": [
-                {
-                    "id": 2,
-                    "title": "abc",
-                    "totalScore": 30,
-                    "score": 5
-                },
-                {
-                    "id": 4,
-                    "title": "abc",
-                    "totalScore": 100,
-                    "score": 7
-                }
-            ],
-            "discussions": [
-                {
-                    "id": 2,
-                    "title": "abc",
-                    "totalScore": 0,
-                    "score": 50
-                }
-            ],
-            "quizes": [
-                {
-                    "id": 2,
-                    "title": "abc",
-                    "totalScore": 0,
-                    "score": 30
-                }
-            ],
+             "scores": [
+                    {
+                        "week": -1,
+                        "studentScores": []
+                    },
+                    {
+                        "week": 1,
+                        "studentScores": [
+                            {
+                                "id": 75,
+                                "title": "test",
+                                "totalScore": 60,
+                                "score": 30,
+                                "week": 1,
+                                "type": "ASSIGNMENT"
+                            },
+                            {
+                                "id": 122,
+                                "title": "Quiz B",
+                                "totalScore": 110,
+                                "score": 100,
+                                "week": 1,
+                                "type": "QUIZ"
+                            }
+                        ]
+                    },
+                    {
+                        "week": 2,
+                        "studentScores": [
+                            {
+                                "id": 72,
+                                "title": "Assignment A",
+                                "totalScore": 50,
+                                "score": 50,
+                                "week": 2,
+                                "type": "ASSIGNMENT"
+                            },
+                            {
+                                "id": 137,
+                                "title": "ㅅ",
+                                "totalScore": 7,
+                                "score": 6,
+                                "week": 2,
+                                "type": "QUIZ"
+                            }
+                        ]
+                    },
+                    {
+                        "week": 3,
+                        "studentScores": [
+                            {
+                                "id": 149,
+                                "title": "3주차 퀴즈",
+                                "totalScore": 50,
+                                "score": 50,
+                                "week": 3,
+                                "type": "QUIZ"
+                            },
+                            {
+                                "id": 162,
+                                "title": "Discussion C",
+                                "totalScore": 110,
+                                "score": 50,
+                                "week": 3,
+                                "type": "DISCUSSION"
+                            }
+                        ]
+                    },
+                    {
+                        "week": 4,
+                        "studentScores": []
+                    },
+                    {
+                        "week": 5,
+                        "studentScores": [
+                            {
+                                "id": 120,
+                                "title": "dd",
+                                "totalScore": 10,
+                                "score": 0,
+                                "week": 5,
+                                "type": "ASSIGNMENT"
+                            }
+                        ]
+                    },
+                    {
+                        "week": 6,
+                        "studentScores": []
+                    },
+                    {
+                        "week": 7,
+                        "studentScores": []
+                    },
+                    {
+                        "week": 8,
+                        "studentScores": [
+                            {
+                                "id": 134,
+                                "title": "8주차 테스트",
+                                "totalScore": 30,
+                                "score": 10,
+                                "week": 8,
+                                "type": "QUIZ"
+                            }
+                        ]
+                    }
+                ],
 
             "score": 92,
             "total": 130
