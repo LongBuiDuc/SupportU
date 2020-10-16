@@ -6502,6 +6502,46 @@ Get all universities of user
             "message":"Cannot execute query!",
         }
         
+### Get List of import Schools [GET /api/schools/list/import]
+Get all universities.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id":1,
+                "name":"Seoul Technolozy University",
+                "createdDate":"2020-07-30T12:32:27",
+                "updateDate":"2020-07-30T12:32:27"
+            },
+            {
+                "id":2,
+                "name":"Seoul Intenational University",
+                "createdDate":"2020-07-30T12:32:27",
+                "updateDate":"2020-07-30T12:32:27"
+            },
+            {
+                "id":3,
+                "name":"Kangnam University",
+                "createdDate":"2020-07-30T12:32:27",
+                "updateDate":"2020-07-30T12:32:27"
+            }
+        ]
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group FCM
 For push notification
 
