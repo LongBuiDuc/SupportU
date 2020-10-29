@@ -2524,7 +2524,44 @@ Create Course position
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Update Courses Parking [POST /api/courses/parking/{courseId}]    
+Update Courses Parking
 
++ Request (application/json)
+
+        {
+            "week": 3
+            "type": "ASSIGNMENT",
+        }
+        
++ Response 200
+
+        {
+                "code": "UPDATE_SUCCESS",
+                "message": "Request confirmed!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "code": "BAD_REQUEST_ERROR",
+            "message":"Bad Request!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
         
 ## Group Assignments
 ### Create Assignment [POST /api/assignments/create/{classId}]    
