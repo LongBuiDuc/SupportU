@@ -3062,6 +3062,57 @@ Update Assignment Comments
             "message":"Cannot execute query!",
         }
 
+### Get Students List Commented [GET /api/assignmentscomments/list/students/{assignmentId}]    
+List Students
+
++ Response 200
+
+        {
+            [
+                {
+                    "id": 310,
+                    "user": {
+                        "id": 4,
+                        "name": "Student 1",
+                        "idNumber": "23456678",
+                        "avatar": "http://18.162.141.53/api.supportu/1600225989415_4___1600225993684___13244753_1382109491805277_4936278203817120154_n.jpg",
+                        "createdDate": null,
+                        "updateDate": null
+                    },
+                    "status": "UNREAD",
+                    "createdDate": "2020-11-06T03:16:55",
+                    "updateDate": "2020-11-06T03:16:55"
+                },
+                {
+                    "id": 311,
+                    "user": {
+                        "id": 4,
+                        "name": "Student 1",
+                        "idNumber": "23456678",
+                        "avatar": "http://18.162.141.53/api.supportu/1600225989415_4___1600225993684___13244753_1382109491805277_4936278203817120154_n.jpg",
+                        "createdDate": null,
+                        "updateDate": null
+                    },
+                    "status": "UNREAD",
+                    "createdDate": "2020-11-06T03:16:55",
+                    "updateDate": "2020-11-06T03:16:55"
+                }
+            ]
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 
 ## Group Quizes
 ### Create Quizes [POST /api/quizes/create/{classId}]    
