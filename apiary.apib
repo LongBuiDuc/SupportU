@@ -661,6 +661,35 @@ Update Consultation.
             "code":"DB_ERROR",
             "message":"Cannot execute query!",
         }
+
+### Check Phone Number of User Import [GET /api/Users/check/userimport/{idNumber}]
+Check Phone Number
+    
++ Response 200 (application/json)
+
+        {
+            "result": true,
+            "phone": "01072569971"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
+        {
+          "code": "AUTH_ERROR",
+          "message": "Access token is invalid!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }
         
 ## Group Search
 
