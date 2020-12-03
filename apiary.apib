@@ -6447,6 +6447,32 @@ Count Notifications UnRead
             "message":"error message"
         }
         
+### Count All Notifications Of User [GET /api/notifications/user/count/]
+Count Notifications of User
+
++ Response 200
+
+        {
+               "notifications": 151
+        }
+                 
+
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+        
+
++ Response 500 (application/json)
+
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"error message"
+        }
+        
 ## Group Notices
 ### Get All Notice [GET /api/Notices/{?page}]
 All Notice
