@@ -690,119 +690,6 @@ Check Phone Number
             "code":"DB_ERROR",
             "message":"Cannot execute query!",
         }
-
-### Get Language [GET /api/userslanguage/info/{roomId}]
-Get language of Users.
-    
-+ Response 200 (application/json)
-
-        {
-            "id": 1,
-            "userId": 4,
-            "type": "ALL",
-            "roomId": 1,
-            "language": "Japanese",
-            "createdDate": "2021-01-06T01:36:47",
-            "updateDate": "2021-01-06T01:56:13"
-        }
-        
-+ Response 401 (application/json)
-
-        {
-          "code": "AUTH_REQUIRED",
-          "message": "Invalid access token! Authentication is required!"
-        }
-        
-        {
-          "code": "AUTH_ERROR",
-          "message": "Access token is invalid!"
-        }
-        
-+ Response 500 (application/json)
-
-        {
-            "code":"DB_ERROR",
-            "message":"Cannot execute query!",
-        }
-   
-### Post Language [POST /api/userslanguage/create/{roomId}]
-Post language of Users.
-
-- type: ALL / MYPOST
-
-+ Request (application/json)
-
-        {
-            "type": "ALL",
-            "language": "English"
-        }
-    
-+ Response 201 (application/json)
-
-        {
-            "id": 1,
-            "userId": 4,
-            "type": "ALL",
-            "roomId": 1,
-            "language": "English",
-            "createdDate": "2021-01-06T08:36:47",
-            "updateDate": "2021-01-06T08:36:47"
-        }
-        
-+ Response 401 (application/json)
-
-        {
-          "code": "AUTH_REQUIRED",
-          "message": "Invalid access token! Authentication is required!"
-        }
-        
-        {
-          "code": "AUTH_ERROR",
-          "message": "Access token is invalid!"
-        }
-        
-+ Response 500 (application/json)
-
-        {
-            "code":"DB_ERROR",
-            "message":"Cannot execute query!",
-        }
-        
-### Post Translate [POST /api/userslanguage/translate/{roomId}]
-Update translate status
-
-
-+ Request (application/json)
-
-        {
-             "translate": true
-        }
-    
-+ Response 201 (application/json)
-
-        {
-            "code": "UPDATE_SUCCESS",
-            "message": "Request confirmed!"
-        }
-        
-+ Response 401 (application/json)
-
-        {
-          "code": "AUTH_REQUIRED",
-          "message": "Invalid access token! Authentication is required!"
-        }
-        
-        {
-          "code": "AUTH_ERROR",
-          "message": "Access token is invalid!"
-        }
-        
-+ Response 500 (application/json)
-
-        {
-            "code":"DB_ERROR",
-            "message":"Cannot execute query!",
-        }
         
 ## Group Search
 
@@ -6380,6 +6267,42 @@ Get Setting Chat Room
         {
             "code":"INTERNAL_SERVER_ERROR",
             "message":"error message"
+        }
+
+### Post Translate [POST /api/chatsettings/translate/{roomId}]
+Update translate status
+
+
++ Request (application/json)
+
+        {
+             "translate": true
+        }
+    
++ Response 201 (application/json)
+
+        {
+            "code": "UPDATE_SUCCESS",
+            "message": "Request confirmed!"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
+        {
+          "code": "AUTH_ERROR",
+          "message": "Access token is invalid!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
         }
 
 ## Group Notification
