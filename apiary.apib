@@ -691,7 +691,7 @@ Check Phone Number
             "message":"Cannot execute query!",
         }
 
-### Get Language [GET /api/userslanguage/info]
+### Get Language [GET /api/userslanguage/info/{roomId}]
 Get language of Users.
     
 + Response 200 (application/json)
@@ -700,6 +700,7 @@ Get language of Users.
             "id": 1,
             "userId": 4,
             "type": "ALL",
+            "roomId": 1,
             "language": "Japanese",
             "createdDate": "2021-01-06T01:36:47",
             "updateDate": "2021-01-06T01:56:13"
@@ -740,44 +741,10 @@ Post language of Users.
             "id": 1,
             "userId": 4,
             "type": "ALL",
+            "roomId": 1,
             "language": "English",
             "createdDate": "2021-01-06T08:36:47",
             "updateDate": "2021-01-06T08:36:47"
-        }
-        
-+ Response 401 (application/json)
-
-        {
-          "code": "AUTH_REQUIRED",
-          "message": "Invalid access token! Authentication is required!"
-        }
-        
-        {
-          "code": "AUTH_ERROR",
-          "message": "Access token is invalid!"
-        }
-        
-+ Response 500 (application/json)
-
-        {
-            "code":"DB_ERROR",
-            "message":"Cannot execute query!",
-        }
-        
-### Put Language [PUT /api/userslanguage/edit]
-Put language of Users.
-
-+ Request (application/json)
-
-        {
-            "language": "English"
-        }
-    
-+ Response 200 (application/json)
-
-        {
-            "code": "UPDATE_SUCCESS",
-            "message": "Request confirmed!"
         }
         
 + Response 401 (application/json)
