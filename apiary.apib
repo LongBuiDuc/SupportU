@@ -6193,8 +6193,8 @@ Post Setting Chat Room
 + Request (application/json)
 
         {
-            "language": "ENGLISH",
-            "type": "ALL "
+            "languageFrom": "ENGLISH",
+            "languageTo": "KOREAN",
         }
 
 + Response 200
@@ -6203,8 +6203,10 @@ Post Setting Chat Room
             "id": 1,
             "userId": 1,
             "roomId": 45,
-            "language": "ENGLISH",
-            "type": "ALL ",
+            "languageFrom": "ENGLISH",
+            "languageTo": "KOREAN",
+            "translateFrom": true,
+            "translateTo": false,
             "createdDate": "2020-09-11T09:45:19",
             "updateDate": "2020-09-11T09:45:19"
         }
@@ -6241,8 +6243,10 @@ Get Setting Chat Room
             "id": 1,
             "userId": 1,
             "roomId": 45,
-            "language": "ENGLISH",
-            "type": "ALL ",
+            "languageFrom": "ENGLISH",
+            "languageTo": "KOREAN",
+            "translateFrom": true,
+            "translateTo": false,
             "createdDate": "2020-09-11T09:45:19",
             "updateDate": "2020-09-11T09:45:19"
         }
@@ -6276,7 +6280,8 @@ Update translate status
 + Request (application/json)
 
         {
-             "translate": true
+             "translateTo": true,
+             "translateFrom": false
         }
     
 + Response 201 (application/json)
