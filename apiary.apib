@@ -4370,26 +4370,27 @@ Create Materials
             "week": 5,
             "title": "title",
             "description": "Description",
+            "duration": 28,
             "format": "LECTURE_VIDEO",
-            "attachedFile": ["http://file1.excel", "http:file2.png"]
+            "attachedFile": ["https://linc-mintpot.s3.ap-northeast-2.amazonaws.com/1609905645701___sample_3840x2160.mp4"]
         }
         
 + Response 200
 
         {
-            "id": 45,
-            "title": "title",
-            "description": "Description",
-            "classId": 2,
-            "week": 5,
+            "id": 185,
+            "title": "Test video",
+            "description": "a a fs a s as ",
+            "classId": 1,
+            "week": -1,
             "format": "LECTURE_VIDEO",
+            "duration": 28,
             "attachedFile": [
-                "http://file1.excel",
-                "http:file2.png"
+                "https://linc-mintpot.s3.ap-northeast-2.amazonaws.com/1609905645701___sample_3840x2160.mp4"
             ],
-            "dueDate": "2020-09-11T06:15:33",
-            "createdDate": "2020-09-04T06:15:33",
-            "updateDate": "2020-09-04T06:15:33"
+            "dueDate": "2021-02-09T09:28:30",
+            "createdDate": "2021-02-02T09:28:30",
+            "updateDate": "2021-02-02T09:28:30"
         }
 
 + Response 400 (application/json)
@@ -4466,11 +4467,12 @@ Edit Detail Materials
 + Request (application/json)
 
         {
-             "week": 5,
+            "week": 5,
             "title": "title",
             "description": "Description",
+            "duration": 200,
             "format": "LECTURE_VIDEO",
-            "attachedFile": ["http://file1.excel", "http:file2.png"]
+            "attachedFile": ["http://file1.excel"]
         }
         
 + Response 200
@@ -4484,8 +4486,7 @@ Edit Detail Materials
             "format": "LECTURE_VIDEO",
             "duration": 200,
             "attachedFile": [
-                "http://file1.excel",
-                "http:file2.png"
+                "http://file1.excel"
             ],
             "dueDate": "2020-09-11T09:04:41",
             "createdDate": "2020-08-10T02:07:21",
