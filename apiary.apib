@@ -168,7 +168,7 @@ User signup
                 "name": "pro",
                 "avatar": null,
                 "phone": "084792486722",
-                "gender": "male",
+                "gender": "MALE",
                 "identity": "PROFESSOR",
                 "degree": "PRO",
                 "school": {
@@ -298,6 +298,64 @@ Logout
           "code": "INTERNAL_SERVER_ERROR",
           "message": "error message"
         }
+        
+### Member Registration [GET /api/authorization/memberregistration]
+Member registration.
+
++ Request (application/json)
+
+        {
+            "name": "duclong",
+            "idNumber": "20201002",
+        }
+    
++ Response 200 (application/json)
+
+        {
+            "id": 162,
+            "email": "registermail444@gmail.com",
+            "password": null,
+            "name": "pro",
+            "avatar": null,
+            "phone": null,
+            "gender": "MALE",
+            "identity": "PROFESSOR",
+            "degree": "PRO",
+            "idNumber": "20201002",
+            "address": null,
+            "detailAddress": null,
+            "schoolEmail": null,
+            "department": "The national language",
+            "nationality": null,
+            "motherTongue": null,
+            "consultation": null,
+            "status": "ACTIVE",
+            "join": "ADMIN",
+            "fcmToken": null,
+            "createdDate": "2020-10-09T08:28:11",
+            "updateDate": "2020-10-09T08:28:11"
+        }
+        
++ Response 400 (application/json)
+
+        
+        {
+          "code": "ID_NUMBER_NOT_FOUND_ERROR",
+          "message": "ID Number Not Found!"
+        }
+        
+        {
+          "code": "USER_NAME_NOT_FOUND_ERROR",
+          "message": "User name Not Found!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+          "code": "INTERNAL_SERVER_ERROR",
+          "message": "error message"
+        }
+
         
 ## Group Users
 ### Get My Profile [GET /api/users/myprofile]
