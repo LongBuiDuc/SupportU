@@ -299,41 +299,39 @@ Logout
           "message": "error message"
         }
         
-### Member Registration [GET /api/authorization/membermmported]
+### Member Registration [GET /api/authorization/membermmported?{name}=&{idNumber}=]
 Member registration.
 
-+ Request (application/json)
-
-        {
-            "name": "duclong",
-            "idNumber": "20201002",
-        }
++ Parameters
+    + name - A query variable
+    + idNumber - A query variable
     
 + Response 200 (application/json)
 
         {
-            "id": 162,
-            "email": null,
-            "password": null,
-            "name": "pro",
-            "avatar": null,
-            "phone": null,
-            "gender": "MALE",
-            "identity": "PROFESSOR",
-            "degree": "PRO",
-            "idNumber": "20201002",
-            "address": null,
-            "detailAddress": null,
-            "schoolEmail": null,
-            "department": "The national language",
-            "nationality": null,
-            "motherTongue": null,
-            "consultation": null,
+            "id": 219,
+            "email": "",
+            "password": "",
+            "name": "Hong Gil Dong",
+            "avatar": "",
+            "phone": "",
+            "gender": "FEMALE",
+            "identity": "EMPLOYEE",
+            "degree": "",
+            "schoolId": 0,
+            "idNumber": "2020010002",
+            "address": "",
+            "detailAddress": "",
+            "schoolEmail": "",
+            "department": "Korean language",
+            "nationality": "",
+            "motherTongue": "",
+            "consultation": "",
             "status": "ACTIVE",
             "join": "ADMIN",
-            "fcmToken": null,
-            "createdDate": "2020-10-09T08:28:11",
-            "updateDate": "2020-10-09T08:28:11"
+            "createdDate": "2021-01-31T20:10:57",
+            "updateDate": "2021-01-31T20:10:57",
+            "fcmToken": ""
         }
         
 + Response 400 (application/json)
