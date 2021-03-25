@@ -6885,6 +6885,37 @@ Check input school info
             "message":"Cannot execute query!",
         }
         
+### Check the student in the school [POST /api/schools/check/student]
+Check student in school
+
++ Request (application/json)
+
+        {
+            "schoolId": 8,
+            "idNumber": "20201212",
+            "identity": "STUDENT"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": true
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group FCM
 For push notification
 
