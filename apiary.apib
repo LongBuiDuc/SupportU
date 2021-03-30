@@ -1783,6 +1783,35 @@ Classes List Import
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Check class student corection period [GET /api/classstudents/period/{classId}]
+Check time students can leave the class
+
++ Request (application/json)
+
+        {
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": true
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ## Group Detail Information of Classes for Student
 ### Get Detail Information of Class [GET /api/classesdetail/detail/{classId}]    
 Get detail informatioin of class
