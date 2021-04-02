@@ -5320,6 +5320,29 @@ Delete Attendance
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get DateTime To Apply Attendance Quiz For Student [GET /api/classesdetail/attendancequiz/datetime/{classId}]    
+Get datetime attendance quiz
+
++ Response 200
+
+        {
+            "dateTime": "2021-04-01T23:53:21"
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Lives
 ### Create Lives [POST /api/Lives/create/{classId}]    
 Create Lives
