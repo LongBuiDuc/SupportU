@@ -2342,6 +2342,75 @@ Get detail attendance status for student
             "code":"INTERNAL_SERVER_ERROR",
             "message":"Cannot execute query!",
         }
+        
+### Get Attendance Status for Student [GET /api/classesdetail/learningstatus/attendancestatus/{classId}]    
+Get attendance status for student
++ Response 200
+
+        {
+            "attendances": [
+                {
+                    "week": 1,
+                    "attendances": [
+                        {
+                            "id": 1,
+                            "week": 1,
+                            "status": "ATTENDANCE"
+                        },
+                        {
+                            "id": 33,
+                            "week": 1,
+                            "status": "ATTENDANCE"
+                        }
+                    ]
+                },
+                {
+                    "week": 2,
+                    "attendances": [
+                        {
+                            "id": 63,
+                            "week": 2,
+                            "status": "ATTENDANCE"
+                        },
+                        {
+                            "id": 147,
+                            "week": 2,
+                            "status": "ABSENT"
+                        }
+                    ]
+                },
+                {
+                    "week": 3,
+                    "attendances": [
+                        {
+                            "id": 64,
+                            "week": 3,
+                            "status": "ABSENT"
+                        },
+                        {
+                            "id": 143,
+                            "week": 3,
+                            "status": "ATTENDANCE"
+                        }
+                    ]
+                }
+            ],
+            "absent": 2
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "code":"AUTH_REQUIRED",
+            "message":"Invalid access token! Authentication is required!"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "code":"INTERNAL_SERVER_ERROR",
+            "message":"Cannot execute query!",
+        }
 ## Group Detail Information of Classes for Professor
         
 ### Get Detail Attendance Status for Professor [GET /api/classesdetail/detail/attendanceinfo/{classId}]    
