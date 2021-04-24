@@ -7252,6 +7252,64 @@ Check the student belongs the school or not
             "message":"Cannot execute query!",
         }
         
+### Check Info Change Schools of Users [POST /api/schools/check/change]
+Check Info Change Schools of Users
+
++ Request (application/json)
+
+        {
+            "schoolId": 96,
+            "idNumber": "20210424"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": true
+        }
+        
++ Response 400 (application/json)
+
+        {
+                "code": "SCHOOL_REGISTERED",
+                "message": "The school used to enroll"
+        }
+        
++ Response 400 (application/json)
+
+        {
+                "code": "SCHOOLERROR",
+                "message": "This school is invalid"
+        }
+
++ Response 400 (application/json)
+
+        {
+                "code": "IDNUMBER_INVALID",
+                "message": "The student numbers is invalid!"
+        }
+        
++ Response 400 (application/json)
+
+        {
+                "code": "IDNUMBER_EXISTED",
+                "message": "The student numbers already exist"
+        }
+        
++ Response 401 (application/json)
+
+        {
+          "code": "AUTH_REQUIRED",
+          "message": "Invalid access token! Authentication is required!"
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "code":"DB_ERROR",
+            "message":"Cannot execute query!",
+        }
+        
 ### Get All Schools Can Change [GET /api/schools/newschools/{?page,all}]
 Get all universities can change.
 
